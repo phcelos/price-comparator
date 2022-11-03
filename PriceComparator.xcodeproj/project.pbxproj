@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD5E15D6291432DC002BE768 /* CompleteInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E15D5291432DC002BE768 /* CompleteInput.swift */; };
 		CD73E730290B135000FD650A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD73E72F290B135000FD650A /* AppDelegate.swift */; };
 		CD73E732290B135000FD650A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD73E731290B135000FD650A /* SceneDelegate.swift */; };
 		CD73E734290B135000FD650A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD73E733290B135000FD650A /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD5E15D5291432DC002BE768 /* CompleteInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteInput.swift; sourceTree = "<group>"; };
 		CD73E72C290B135000FD650A /* PriceComparator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PriceComparator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD73E72F290B135000FD650A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD73E731290B135000FD650A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				CD73E72F290B135000FD650A /* AppDelegate.swift */,
 				CD73E731290B135000FD650A /* SceneDelegate.swift */,
 				CD73E733290B135000FD650A /* ViewController.swift */,
+				CD5E15D5291432DC002BE768 /* CompleteInput.swift */,
 				CD73E738290B135300FD650A /* Assets.xcassets */,
 				CD73E73A290B135300FD650A /* LaunchScreen.storyboard */,
 				CD73E73D290B135300FD650A /* Info.plist */,
@@ -257,6 +260,7 @@
 				CD73E734290B135000FD650A /* ViewController.swift in Sources */,
 				CD73E730290B135000FD650A /* AppDelegate.swift in Sources */,
 				CD73E732290B135000FD650A /* SceneDelegate.swift in Sources */,
+				CD5E15D6291432DC002BE768 /* CompleteInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
