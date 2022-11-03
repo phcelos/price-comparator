@@ -16,25 +16,25 @@ class ViewController: UIViewController {
     }()
     
     private lazy var product1AmountInput: CompleteInput = {
-        let view = CompleteInput(labelText: "Peso produto 1: ", placeHolder: "Peso em gramas")
+        let view = CompleteInput(labelText: "Peso produto 1: ", placeHolder: "Peso em gramas", target: self)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     private lazy var product1PriceInput: CompleteInput = {
-        let view = CompleteInput(labelText: "Preço produto 1: ", placeHolder: "Preço")
+        let view = CompleteInput(labelText: "Preço produto 1: ", placeHolder: "Preço", target: self)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     private lazy var product2AmountInput: CompleteInput = {
-        let view = CompleteInput(labelText: "Peso produto 2: ", placeHolder: "Peso em gramas")
+        let view = CompleteInput(labelText: "Peso produto 2: ", placeHolder: "Peso em gramas", target: self)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     private lazy var product2PriceInput: CompleteInput = {
-        let view = CompleteInput(labelText: "Peso produto 2: ", placeHolder: "Preço")
+        let view = CompleteInput(labelText: "Peso produto 2: ", placeHolder: "Preço", target: self)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -88,4 +88,10 @@ class ViewController: UIViewController {
     }
 
 
+}
+
+extension ViewController: TextFieldDelegate {
+    func textField(_ textField: UITextField, didFinishEditingWithText text: String) {
+        
+    }
 }

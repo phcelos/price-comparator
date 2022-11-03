@@ -11,6 +11,7 @@ final class CompleteInput: UIStackView {
     
     private let labelText: String
     private let placeHolder: String
+    private let target: TextFieldDelegate
     
     private lazy var label: UILabel = {
         let view = UILabel()
@@ -24,10 +25,11 @@ final class CompleteInput: UIStackView {
         return view
     }()
             
-    init(labelText: String, placeHolder: String) {
+    init(labelText: String, placeHolder: String, target: TextFieldDelegate) {
         self.labelText = labelText
         self.placeHolder = placeHolder
-        
+        self.target = target
+
         super.init(frame: .zero)
         
         setupViewHierarchy()
@@ -63,5 +65,10 @@ final class CompleteInput: UIStackView {
         textField.backgroundColor = .white
         textField.layer.cornerRadius = 10
         textField.keyboardType = .numberPad
+        textField.addTarget(self, action: #selector(didFinishEditing), for: .editingDidEnd)
+    }
+    
+    @objc private func didFinishEditing() {
+        target.textField(textField, didFinishEditingWithText: textField.text ?? "")
     }
 }
