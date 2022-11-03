@@ -6,7 +6,7 @@
 //
 
 struct ProductComparator {
-    func calculateTheChepeastProductAndDifference(price1: Float?, amount1InGrams amount1: Float?, price2: Float?, amount2InGrams amount2: Float?) -> ChepeastProduct? {
+    static func calculateTheChepeastProduct(amount1InGrams amount1: Float?, price1: Float?, amount2InGrams amount2: Float?, price2: Float?) -> ChepeastProduct? {
         guard
             let price1 = price1,
             let amount1 = amount1,

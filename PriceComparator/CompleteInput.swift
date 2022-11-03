@@ -11,7 +11,7 @@ final class CompleteInput: UIStackView {
     
     private let labelText: String
     private let placeHolder: String
-    private let target: TextFieldDelegate
+    private let target: CompleteInputDelegate
     
     private lazy var label: UILabel = {
         let view = UILabel()
@@ -25,7 +25,7 @@ final class CompleteInput: UIStackView {
         return view
     }()
             
-    init(labelText: String, placeHolder: String, target: TextFieldDelegate) {
+    init(labelText: String, placeHolder: String, target: CompleteInputDelegate) {
         self.labelText = labelText
         self.placeHolder = placeHolder
         self.target = target
@@ -69,6 +69,6 @@ final class CompleteInput: UIStackView {
     }
     
     @objc private func didFinishEditing() {
-        target.textField(textField, didFinishEditingWithText: textField.text ?? "")
+        target.completeInput(self, didFinishEditingWithText: textField.text ?? "")
     }
 }

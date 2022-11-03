@@ -9,6 +9,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    private var product1Amount: Float?
+    private var product1Price: Float?
+    private var product2Amount: Float?
+    private var product2Price: Float?
+    
     private lazy var titleLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -86,12 +91,42 @@ class ViewController: UIViewController {
         resultLabel.font = UIFont.boldSystemFont(ofSize: 30)
         mainStackView.addArrangedSubview(resultLabel)
     }
-
-
+    
+    func updateResultLabel(chepeastProduct: ChepeastProduct?) {
+        if let chepeastProduct = chepeastProduct {
+            switch chepeastProduct {
+            case .none:
+                resultLabel.text = "Mesmo preço."
+            default:
+                resultLabel.text = "O produto mais barato é o \(chepeastProduct.rawValue)."
+            }
+        } else {
+            resultLabel.text = "Resultado."
+        }
+    }
 }
 
-extension ViewController: TextFieldDelegate {
-    func textField(_ textField: UITextField, didFinishEditingWithText text: String) {
+extension ViewController: CompleteInputDelegate {
+    func completeInput(_ completeInput: CompleteInput, didFinishEditingWithText text: String) {
+        let insertedValue = Float(text)
         
+        switch completeInput {
+        case product1AmountInput:
+            product1Amount = insertedValue
+        case product1PriceInput:
+            product1Price = insertedValue
+        case product2AmountInput:
+            product2Amount = insertedValue
+        case product2PriceInput:
+            product2Price = insertedValue
+        default:
+            return
+        }
+        
+        let chepeastProduct = ProductComparator.calculateTheChepeastProduct(
+            amount1InGrams: product1Amount, price1: product1Price,
+            amount2InGrams: product2Amount, price2: product2Price)
+        
+        updateResultLabel(chepeastProduct: chepeastProduct)
     }
 }
