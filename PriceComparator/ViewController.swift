@@ -15,26 +15,26 @@ class ViewController: UIViewController {
         return view
     }()
     
-    private lazy var product1Label: UILabel = {
-        let view = UILabel()
+    private lazy var product1AmountInput: CompleteInput = {
+        let view = CompleteInput(labelText: "Peso produto 1: ", placeHolder: "Peso em gramas")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private lazy var product2Label: UILabel = {
-        let view = UILabel()
+    private lazy var product1PriceInput: CompleteInput = {
+        let view = CompleteInput(labelText: "Preço produto 1: ", placeHolder: "Preço")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private lazy var product1WeightTextField: UITextField = {
-        let view = UITextField()
+    private lazy var product2AmountInput: CompleteInput = {
+        let view = CompleteInput(labelText: "Peso produto 2: ", placeHolder: "Peso em gramas")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private lazy var product2WeightTextField: UITextField = {
-        let view = UITextField()
+    private lazy var product2PriceInput: CompleteInput = {
+        let view = CompleteInput(labelText: "Peso produto 2: ", placeHolder: "Preço")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -50,19 +50,7 @@ class ViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
-    private lazy var product1StackView: UIStackView = {
-        let view = UIStackView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    private lazy var product2StackView: UIStackView = {
-        let view = UIStackView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -83,45 +71,17 @@ class ViewController: UIViewController {
         mainStackView.axis = .vertical
         mainStackView.alignment = .center
         mainStackView.distribution = .equalSpacing
-//        mainStackView.spacing = 30
-        
-//        stackView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
-        mainStackView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+
         mainStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor).isActive = true
         mainStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100).isActive = true
+        mainStackView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
+        mainStackView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
 
-        product1StackView.spacing = 10
-        mainStackView.addArrangedSubview(product1StackView)
-        
-        product2StackView.spacing = 10
-        mainStackView.addArrangedSubview(product2StackView)
-        
-        product1Label.text = "Produto 1: "
-        product1Label.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        product1StackView.addArrangedSubview(product1Label)
-        
-        product1WeightTextField.placeholder = "Digite o peso em gramas"
-        product1WeightTextField.backgroundColor = .white
-        product1WeightTextField.layer.cornerRadius = 10
-        product1WeightTextField.keyboardType = .numberPad
-        product1StackView.addArrangedSubview(product1WeightTextField)
-        
-        product1WeightTextField.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        product1WeightTextField.heightAnchor.constraint(equalTo: product1Label.heightAnchor).isActive = true
-        
-        product2Label.text = "Produto 2: "
-        product2Label.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        product2StackView.addArrangedSubview(product2Label)
-        
-        product2WeightTextField.placeholder = "Digite o peso em gramas"
-        product2WeightTextField.backgroundColor = .white
-        product2WeightTextField.layer.cornerRadius = 10
-        product2WeightTextField.keyboardType = .numberPad
-        product2StackView.addArrangedSubview(product2WeightTextField)
-        
-        product2WeightTextField.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        product2WeightTextField.heightAnchor.constraint(equalTo: product1Label.heightAnchor).isActive = true
-        
+        mainStackView.addArrangedSubview(product1AmountInput)
+        mainStackView.addArrangedSubview(product1PriceInput)
+        mainStackView.addArrangedSubview(product2AmountInput)
+        mainStackView.addArrangedSubview(product2PriceInput)
+                
         resultLabel.text = "Resultado"
         resultLabel.font = UIFont.boldSystemFont(ofSize: 30)
         mainStackView.addArrangedSubview(resultLabel)

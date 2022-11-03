@@ -23,13 +23,7 @@ final class CompleteInput: UIStackView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
-    private lazy var stackView: UIStackView = {
-        let view = UIStackView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-        
+            
     init(labelText: String, placeHolder: String) {
         self.labelText = labelText
         self.placeHolder = placeHolder
@@ -46,20 +40,24 @@ final class CompleteInput: UIStackView {
     }
     
     private func setupViewHierarchy() {
-        stackView.addArrangedSubview(label)
-        stackView.addArrangedSubview(textField)
+        addArrangedSubview(label)
+        addArrangedSubview(textField)
     }
     
     private func setupConstraints() {
         label.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        textField.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        textField.widthAnchor.constraint(equalToConstant: 150).isActive = true
         textField.heightAnchor.constraint(equalTo: label.heightAnchor).isActive = true
     }
     
     private func configElements() {
-        stackView.spacing = 10
+        spacing = 5
+        backgroundColor = .green
+        distribution = .fillEqually
         
         label.text = labelText
+        label.adjustsFontSizeToFitWidth = true
+        label.backgroundColor = .red
         
         textField.placeholder = placeHolder
         textField.backgroundColor = .white
