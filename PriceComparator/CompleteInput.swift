@@ -64,8 +64,14 @@ final class CompleteInput: UIStackView {
         textField.placeholder = placeHolder
         textField.backgroundColor = .white
         textField.layer.cornerRadius = 10
-        textField.keyboardType = .numberPad
+        textField.keyboardType = .decimalPad
+        textField.addTarget(self, action: #selector(didStartEditing), for: .editingDidBegin)
         textField.addTarget(self, action: #selector(didFinishEditing), for: .editingDidEnd)
+
+    }
+    
+    @objc private func didStartEditing() {
+        target.completeInputDidStartEditing(self)
     }
     
     @objc private func didFinishEditing() {

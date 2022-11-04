@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     private var product2Amount: Float?
     private var product2Price: Float?
     
+    private var activeCompleteInput: CompleteInput?
+    
     private lazy var titleLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -39,11 +41,11 @@ class ViewController: UIViewController {
     }()
     
     private lazy var product2PriceInput: CompleteInput = {
-        let view = CompleteInput(labelText: "Peso produto 2: ", placeHolder: "Preço", target: self)
+        let view = CompleteInput(labelText: "Preço produto 2: ", placeHolder: "Preço", target: self)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-
+    
     private lazy var resultLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -55,7 +57,7 @@ class ViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -67,29 +69,33 @@ class ViewController: UIViewController {
         
         view.addSubview(titleLabel)
         view.addSubview(mainStackView)
-
+        
         titleLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
         titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
         titleLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-
+        
         mainStackView.backgroundColor = .blue
         mainStackView.axis = .vertical
         mainStackView.alignment = .center
         mainStackView.distribution = .equalSpacing
-
+        
         mainStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor).isActive = true
         mainStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100).isActive = true
         mainStackView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
         mainStackView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
-
+        
         mainStackView.addArrangedSubview(product1AmountInput)
         mainStackView.addArrangedSubview(product1PriceInput)
         mainStackView.addArrangedSubview(product2AmountInput)
         mainStackView.addArrangedSubview(product2PriceInput)
-                
+        
         resultLabel.text = "Resultado"
-        resultLabel.font = UIFont.boldSystemFont(ofSize: 30)
+        resultLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        resultLabel.adjustsFontSizeToFitWidth = true
         mainStackView.addArrangedSubview(resultLabel)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     func updateResultLabel(chepeastProduct: ChepeastProduct?) {
@@ -104,9 +110,32 @@ class ViewController: UIViewController {
             resultLabel.text = "Resultado."
         }
     }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
+              let activeCompleteInput = activeCompleteInput
+        else { return }
+        
+        let bottomOfTextField = activeCompleteInput.convert(activeCompleteInput.bounds, to: view).maxY
+        
+        let topOfKeyboard = view.frame.height - keyboardSize.height
+        
+        // if the bottom of Textfield is below the top of keyboard, move up
+        if bottomOfTextField > topOfKeyboard {
+            view.frame.origin.y = topOfKeyboard - bottomOfTextField - 10
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        view.frame.origin.y = 0
+    }
 }
 
 extension ViewController: CompleteInputDelegate {
+    func completeInputDidStartEditing(_ completeInput: CompleteInput) {
+        activeCompleteInput = completeInput
+    }
+    
     func completeInput(_ completeInput: CompleteInput, didFinishEditingWithText text: String) {
         let insertedValue = Float(text)
         
