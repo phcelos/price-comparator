@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD0C24FF291AEF010042719D /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0C24FE291AEF000042719D /* Product.swift */; };
 		CD5E15D6291432DC002BE768 /* CompleteInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E15D5291432DC002BE768 /* CompleteInputView.swift */; };
 		CD5E15D829145424002BE768 /* CompleteInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E15D729145424002BE768 /* CompleteInputDelegate.swift */; };
 		CD5E15DA29145804002BE768 /* ProductComparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E15D929145804002BE768 /* ProductComparator.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD0C24FE291AEF000042719D /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		CD5E15D5291432DC002BE768 /* CompleteInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteInputView.swift; sourceTree = "<group>"; };
 		CD5E15D729145424002BE768 /* CompleteInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteInputDelegate.swift; sourceTree = "<group>"; };
 		CD5E15D929145804002BE768 /* ProductComparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductComparator.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				CD73E733290B135000FD650A /* ViewController.swift */,
 				CD5E15D5291432DC002BE768 /* CompleteInputView.swift */,
 				CD5E15D929145804002BE768 /* ProductComparator.swift */,
+				CD0C24FE291AEF000042719D /* Product.swift */,
 				CD5E15DB29145A7F002BE768 /* ChepeastProduct.swift */,
 				CD5E15D729145424002BE768 /* CompleteInputDelegate.swift */,
 				CD73E738290B135300FD650A /* Assets.xcassets */,
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD5E15DA29145804002BE768 /* ProductComparator.swift in Sources */,
+				CD0C24FF291AEF010042719D /* Product.swift in Sources */,
 				CD73E734290B135000FD650A /* ViewController.swift in Sources */,
 				CD5E15D829145424002BE768 /* CompleteInputDelegate.swift in Sources */,
 				CD73E730290B135000FD650A /* AppDelegate.swift in Sources */,
