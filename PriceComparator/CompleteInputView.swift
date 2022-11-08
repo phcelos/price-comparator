@@ -14,15 +14,11 @@ final class CompleteInputView: UIStackView {
     private let target: CompleteInputDelegate
     
     private lazy var label: UILabel = {
-        let view = UILabel()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+        return UILabel()
     }()
         
     private lazy var textField: UITextField = {
-        let view = UITextField()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+        return UITextField()
     }()
             
     init(labelText: String, placeHolder: String, target: CompleteInputDelegate) {
@@ -47,7 +43,10 @@ final class CompleteInputView: UIStackView {
     }
     
     private func setupConstraints() {
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        textField.translatesAutoresizingMaskIntoConstraints = false
         textField.widthAnchor.constraint(equalToConstant: 150).isActive = true
         textField.heightAnchor.constraint(equalTo: label.heightAnchor).isActive = true
     }
