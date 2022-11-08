@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CompleteInput: UIStackView {
+final class CompleteInputView: UIStackView {
     
     private let labelText: String
     private let placeHolder: String

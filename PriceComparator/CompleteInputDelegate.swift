@@ -8,6 +8,6 @@
 import UIKit
 
 protocol CompleteInputDelegate {
-    func completeInputDidStartEditing(_ completeInput: CompleteInput)
-    func completeInput(_ completeInput: CompleteInput, didFinishEditingWithText text: String)
+    func completeInputDidStartEditing(_ completeInput: CompleteInputView)
+    func completeInput(_ completeInput: CompleteInputView, didFinishEditingWithText text: String)
 }

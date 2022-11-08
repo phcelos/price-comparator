@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CD5E15D6291432DC002BE768 /* CompleteInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E15D5291432DC002BE768 /* CompleteInput.swift */; };
+		CD5E15D6291432DC002BE768 /* CompleteInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E15D5291432DC002BE768 /* CompleteInputView.swift */; };
 		CD5E15D829145424002BE768 /* CompleteInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E15D729145424002BE768 /* CompleteInputDelegate.swift */; };
 		CD5E15DA29145804002BE768 /* ProductComparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E15D929145804002BE768 /* ProductComparator.swift */; };
 		CD5E15DC29145A7F002BE768 /* ChepeastProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E15DB29145A7F002BE768 /* ChepeastProduct.swift */; };
@@ -39,7 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CD5E15D5291432DC002BE768 /* CompleteInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteInput.swift; sourceTree = "<group>"; };
+		CD5E15D5291432DC002BE768 /* CompleteInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteInputView.swift; sourceTree = "<group>"; };
 		CD5E15D729145424002BE768 /* CompleteInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteInputDelegate.swift; sourceTree = "<group>"; };
 		CD5E15D929145804002BE768 /* ProductComparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductComparator.swift; sourceTree = "<group>"; };
 		CD5E15DB29145A7F002BE768 /* ChepeastProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChepeastProduct.swift; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 				CD73E72F290B135000FD650A /* AppDelegate.swift */,
 				CD73E731290B135000FD650A /* SceneDelegate.swift */,
 				CD73E733290B135000FD650A /* ViewController.swift */,
-				CD5E15D5291432DC002BE768 /* CompleteInput.swift */,
+				CD5E15D5291432DC002BE768 /* CompleteInputView.swift */,
 				CD5E15D929145804002BE768 /* ProductComparator.swift */,
 				CD5E15DB29145A7F002BE768 /* ChepeastProduct.swift */,
 				CD5E15D729145424002BE768 /* CompleteInputDelegate.swift */,
@@ -271,7 +271,7 @@
 				CD5E15D829145424002BE768 /* CompleteInputDelegate.swift in Sources */,
 				CD73E730290B135000FD650A /* AppDelegate.swift in Sources */,
 				CD73E732290B135000FD650A /* SceneDelegate.swift in Sources */,
-				CD5E15D6291432DC002BE768 /* CompleteInput.swift in Sources */,
+				CD5E15D6291432DC002BE768 /* CompleteInputView.swift in Sources */,
 				CD5E15DC29145A7F002BE768 /* ChepeastProduct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
