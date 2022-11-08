@@ -19,6 +19,9 @@ class ViewController: UIViewController {
     private lazy var titleLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.text = "Comparador de Preços"
+        view.textColor = .black
+        view.font = UIFont.boldSystemFont(ofSize: 20)
         return view
     }()
     
@@ -49,12 +52,19 @@ class ViewController: UIViewController {
     private lazy var resultLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.text = "Resultado"
+        view.font = UIFont.boldSystemFont(ofSize: 20)
+        view.adjustsFontSizeToFitWidth = true
         return view
     }()
     
     private lazy var mainStackView: UIStackView = {
         let view = UIStackView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .blue
+        view.axis = .vertical
+        view.alignment = .center
+        view.distribution = .equalSpacing
         return view
     }()
     
@@ -63,37 +73,34 @@ class ViewController: UIViewController {
         
         view.backgroundColor = .white
         
-        titleLabel.text = "Comparador de Preços"
-        titleLabel.textColor = .black
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
-        
+        setupViewHierarchy()
+        setupConstraints()
+        setupKeyboardEvents()
+    }
+    
+    private func setupViewHierarchy() {
         view.addSubview(titleLabel)
         view.addSubview(mainStackView)
-        
-        titleLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-        titleLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        
-        mainStackView.backgroundColor = .blue
-        mainStackView.axis = .vertical
-        mainStackView.alignment = .center
-        mainStackView.distribution = .equalSpacing
-        
-        mainStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor).isActive = true
-        mainStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100).isActive = true
-        mainStackView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
-        mainStackView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
         
         mainStackView.addArrangedSubview(product1AmountInput)
         mainStackView.addArrangedSubview(product1PriceInput)
         mainStackView.addArrangedSubview(product2AmountInput)
         mainStackView.addArrangedSubview(product2PriceInput)
-        
-        resultLabel.text = "Resultado"
-        resultLabel.font = UIFont.boldSystemFont(ofSize: 20)
-        resultLabel.adjustsFontSizeToFitWidth = true
         mainStackView.addArrangedSubview(resultLabel)
+    }
+    
+    private func setupConstraints() {
+        titleLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+        titleLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         
+        mainStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor).isActive = true
+        mainStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100).isActive = true
+        mainStackView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
+        mainStackView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
+    }
+    
+    func setupKeyboardEvents() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
