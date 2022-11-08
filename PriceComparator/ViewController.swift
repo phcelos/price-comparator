@@ -26,25 +26,25 @@ final class ViewController: UIViewController {
     }()
     
     private lazy var product1AmountInput: CompleteInputView = {
-        let view = CompleteInputView(labelText: "Peso produto 1: ", placeHolder: "Peso em gramas", target: self)
+        let view = CompleteInputView(labelText: "Peso produto 1: ", placeHolder: "Peso em gramas", delegate: self)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     private lazy var product1PriceInput: CompleteInputView = {
-        let view = CompleteInputView(labelText: "Preço produto 1: ", placeHolder: "Preço", target: self)
+        let view = CompleteInputView(labelText: "Preço produto 1: ", placeHolder: "Preço", delegate: self)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     private lazy var product2AmountInput: CompleteInputView = {
-        let view = CompleteInputView(labelText: "Peso produto 2: ", placeHolder: "Peso em gramas", target: self)
+        let view = CompleteInputView(labelText: "Peso produto 2: ", placeHolder: "Peso em gramas", delegate: self)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     private lazy var product2PriceInput: CompleteInputView = {
-        let view = CompleteInputView(labelText: "Preço produto 2: ", placeHolder: "Preço", target: self)
+        let view = CompleteInputView(labelText: "Preço produto 2: ", placeHolder: "Preço", delegate: self)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

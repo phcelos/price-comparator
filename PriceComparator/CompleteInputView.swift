@@ -21,10 +21,10 @@ final class CompleteInputView: UIStackView {
         return UITextField()
     }()
             
-    init(labelText: String, placeHolder: String, target: CompleteInputDelegate) {
+    init(labelText: String, placeHolder: String, delegate: CompleteInputDelegate) {
         self.labelText = labelText
         self.placeHolder = placeHolder
-        self.delegate = target
+        self.delegate = delegate
 
         super.init(frame: .zero)
         
