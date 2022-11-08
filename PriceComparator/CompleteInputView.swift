@@ -33,6 +33,7 @@ final class CompleteInputView: UIStackView {
         configElements()
     }
     
+    @available(*, unavailable)
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
