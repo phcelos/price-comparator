@@ -43,7 +43,7 @@ final class CompleteInputView: UIStackView {
         
         setupViewHierarchy()
         setupConstraints()
-        configElements()
+        setupView()
     }
     
     @available(*, unavailable)
@@ -65,7 +65,7 @@ final class CompleteInputView: UIStackView {
         textField.heightAnchor.constraint(equalTo: label.heightAnchor).isActive = true
     }
     
-    private func configElements() {
+    private func setupView() {
         spacing = 5
         backgroundColor = .green
         distribution = .fillEqually
