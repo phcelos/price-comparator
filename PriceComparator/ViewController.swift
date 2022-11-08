@@ -71,11 +71,14 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
-        
+        setupView()
         setupViewHierarchy()
         setupConstraints()
         setupKeyboardEvents()
+    }
+    
+    private func setupView() {
+        view.backgroundColor = .white
     }
     
     private func setupViewHierarchy() {
