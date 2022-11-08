@@ -17,13 +17,7 @@ struct ProductComparator {
             return nil
         }
         
-        if priceOfGram1 < priceOfGram2 {
-            return .product1
-        } else if priceOfGram1 > priceOfGram2 {
-            return .product2
-        } else {
-            return .equal
-        }
+        return comparePricesOfGrams(priceOfGram1, priceOfGram2)
     }
     
     private static func gramPriceOf(product: Product) -> Float? {
@@ -34,5 +28,15 @@ struct ProductComparator {
             return nil
         }
         return fullPrice/amount
+    }
+    
+    private static func comparePricesOfGrams(_ priceOfGram1: Float, _ priceOfGram2: Float) -> ChepeastProduct {
+        if priceOfGram1 < priceOfGram2 {
+            return .product1
+        } else if priceOfGram1 > priceOfGram2 {
+            return .product2
+        } else {
+            return .equal
+        }
     }
 }
