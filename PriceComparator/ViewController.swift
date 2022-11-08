@@ -9,12 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    static private let double SPACING_BETWEEN_KEYBOARD_AND_TEXT_FIELD = 10;
 
     private var product1Amount: Float?
     private var product1Price: Float?
     private var product2Amount: Float?
     private var product2Price: Float?
+    private let SPACING_BETWEEN_KEYBOARD_AND_TEXT_FIELD: CGFloat = 10
     
     private var activeCompleteInput: CompleteInputView?
     
