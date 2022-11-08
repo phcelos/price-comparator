@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     private var product2Amount: Float?
     private var product2Price: Float?
     
-    private var activeCompleteInput: CompleteInput?
+    private var activeCompleteInput: CompleteInputView?
     
     private lazy var titleLabel: UILabel = {
         let view = UILabel()
@@ -22,26 +22,26 @@ class ViewController: UIViewController {
         return view
     }()
     
-    private lazy var product1AmountInput: CompleteInput = {
-        let view = CompleteInput(labelText: "Peso produto 1: ", placeHolder: "Peso em gramas", target: self)
+    private lazy var product1AmountInput: CompleteInputView = {
+        let view = CompleteInputView(labelText: "Peso produto 1: ", placeHolder: "Peso em gramas", target: self)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private lazy var product1PriceInput: CompleteInput = {
-        let view = CompleteInput(labelText: "Preço produto 1: ", placeHolder: "Preço", target: self)
+    private lazy var product1PriceInput: CompleteInputView = {
+        let view = CompleteInputView(labelText: "Preço produto 1: ", placeHolder: "Preço", target: self)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private lazy var product2AmountInput: CompleteInput = {
-        let view = CompleteInput(labelText: "Peso produto 2: ", placeHolder: "Peso em gramas", target: self)
+    private lazy var product2AmountInput: CompleteInputView = {
+        let view = CompleteInputView(labelText: "Peso produto 2: ", placeHolder: "Peso em gramas", target: self)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private lazy var product2PriceInput: CompleteInput = {
-        let view = CompleteInput(labelText: "Preço produto 2: ", placeHolder: "Preço", target: self)
+    private lazy var product2PriceInput: CompleteInputView = {
+        let view = CompleteInputView(labelText: "Preço produto 2: ", placeHolder: "Preço", target: self)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -132,11 +132,11 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: CompleteInputDelegate {
-    func completeInputDidStartEditing(_ completeInput: CompleteInput) {
+    func completeInputDidStartEditing(_ completeInput: CompleteInputView) {
         activeCompleteInput = completeInput
     }
     
-    func completeInput(_ completeInput: CompleteInput, didFinishEditingWithText text: String) {
+    func completeInput(_ completeInput: CompleteInputView, didFinishEditingWithText text: String) {
         let insertedValue = Float(text)
         
         switch completeInput {
