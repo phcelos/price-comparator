@@ -9,12 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
-
-    private var product1Amount: Float?
-    private var product1Price: Float?
-    private var product2Amount: Float?
-    private var product2Price: Float?
     private let SPACING_BETWEEN_KEYBOARD_AND_TEXT_FIELD: CGFloat = 10
+    
+    private var product1 = Product()
+    private var product2 = Product()
     
     private var activeCompleteInput: CompleteInputView?
     
@@ -105,9 +103,12 @@ class ViewController: UIViewController {
     }
     
     @objc private func keyboardWillShow(notification: NSNotification) {
-        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
-              let activeCompleteInput = activeCompleteInput
-        else { return }
+        guard
+            let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
+            let activeCompleteInput = activeCompleteInput
+        else {
+            return
+        }
         
         let bottomOfTextField = activeCompleteInput.convert(activeCompleteInput.bounds, to: view).maxY
         
@@ -134,20 +135,19 @@ extension ViewController: CompleteInputDelegate {
         
         switch completeInput {
         case product1AmountInput:
-            product1Amount = insertedValue
+            product1.amount = insertedValue
         case product1PriceInput:
-            product1Price = insertedValue
+            product1.price = insertedValue
         case product2AmountInput:
-            product2Amount = insertedValue
+            product2.amount = insertedValue
         case product2PriceInput:
-            product2Price = insertedValue
+            product2.price = insertedValue
         default:
             return
         }
         
         let chepeastProduct = ProductComparator.calculateTheChepeastProduct(
-            amount1InGrams: product1Amount, price1: product1Price,
-            amount2InGrams: product2Amount, price2: product2Price)
+            product1: product1, product2: product2)
         
         updateResultLabel(chepeastProduct: chepeastProduct)
     }

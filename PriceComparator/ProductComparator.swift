@@ -9,19 +9,30 @@ struct ProductComparator {
     
     private init() {}
     
-    static func calculateTheChepeastProduct(amount1InGrams amount1: Float?, price1: Float?, amount2InGrams amount2: Float?, price2: Float?) -> ChepeastProduct? {
+    static func calculateTheChepeastProduct(product1: Product, product2: Product) -> ChepeastProduct? {
         guard
-            let price1 = price1,
-            let amount1 = amount1,
-            let price2 = price2,
-            let amount2 = amount2 else { return nil }
+            let priceOfGram1 = gramPriceOf(product: product1),
+            let priceOfGram2 = gramPriceOf(product: product2)
+        else {
+            return nil
+        }
         
-        if price1/amount1 < price2/amount2 {
+        if priceOfGram1 < priceOfGram2 {
             return .product1
-        } else if price1/amount1 > price2/amount2 {
+        } else if priceOfGram1 > priceOfGram2 {
             return .product2
         } else {
-            return ChepeastProduct.none
+            return .equal
         }
+    }
+    
+    private static func gramPriceOf(product: Product) -> Float? {
+        guard
+            let fullPrice = product.price,
+            let amount = product.amount
+        else {
+            return nil
+        }
+        return fullPrice/amount
     }
 }
