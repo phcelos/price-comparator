@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
     private let SPACING_BETWEEN_KEYBOARD_AND_TEXT_FIELD: CGFloat = 10
     
