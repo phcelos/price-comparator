@@ -72,6 +72,7 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
         
         setupView()
+
         setupViewHierarchy()
         setupConstraints()
         setupKeyboardEvents()
