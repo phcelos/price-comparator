@@ -14,11 +14,24 @@ final class CompleteInputView: UIStackView {
     private let delegate: CompleteInputDelegate
     
     private lazy var label: UILabel = {
-        return UILabel()
+        let view = UILabel()
+        view.text = labelText
+        view.adjustsFontSizeToFitWidth = true
+        view.backgroundColor = .red
+        
+        return view
     }()
         
     private lazy var textField: UITextField = {
-        return UITextField()
+        let view = UITextField()
+        view.placeholder = placeHolder
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 10
+        view.keyboardType = .decimalPad
+        view.addTarget(self, action: #selector(didStartEditing), for: .editingDidBegin)
+        view.addTarget(self, action: #selector(didFinishEditing), for: .editingDidEnd)
+        
+        return view
     }()
             
     init(labelText: String, placeHolder: String, delegate: CompleteInputDelegate) {
@@ -56,18 +69,6 @@ final class CompleteInputView: UIStackView {
         spacing = 5
         backgroundColor = .green
         distribution = .fillEqually
-        
-        label.text = labelText
-        label.adjustsFontSizeToFitWidth = true
-        label.backgroundColor = .red
-        
-        textField.placeholder = placeHolder
-        textField.backgroundColor = .white
-        textField.layer.cornerRadius = 10
-        textField.keyboardType = .decimalPad
-        textField.addTarget(self, action: #selector(didStartEditing), for: .editingDidBegin)
-        textField.addTarget(self, action: #selector(didFinishEditing), for: .editingDidEnd)
-
     }
     
     @objc private func didStartEditing() {
