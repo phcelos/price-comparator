@@ -98,7 +98,7 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    func updateResultLabel(chepeastProduct: ChepeastProduct?) {
+    private func updateResultLabel(chepeastProduct: ChepeastProduct?) {
         resultLabel.text = chepeastProduct?.rawValue ?? "Resultado"
     }
     
