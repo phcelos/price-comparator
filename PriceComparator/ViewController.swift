@@ -101,16 +101,7 @@ class ViewController: UIViewController {
     }
     
     func updateResultLabel(chepeastProduct: ChepeastProduct?) {
-        if let chepeastProduct = chepeastProduct {
-            switch chepeastProduct {
-            case .none:
-                resultLabel.text = "Mesmo preço."
-            default:
-                resultLabel.text = "O produto mais barato é o \(chepeastProduct.rawValue)."
-            }
-        } else {
-            resultLabel.text = "Resultado."
-        }
+        resultLabel.text = chepeastProduct?.rawValue ?? "Resultado"
     }
     
     @objc private func keyboardWillShow(notification: NSNotification) {

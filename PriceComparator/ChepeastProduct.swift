@@ -6,7 +6,7 @@
 //
 
 enum ChepeastProduct: String {
-    case product1 = "Produto 1"
-    case product2 = "Produto 2"
-    case none = "nenhum"
+    case product1 = "Produto 1 é o mais barato"
+    case product2 = "Produto 2 é o mais barato"
+    case equal = "Os produtos têm o mesmo custo"
 }
