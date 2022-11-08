@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    static private let double SPACING_BETWEEN_KEYBOARD_AND_TEXT_FIELD = 10;
+
     private var product1Amount: Float?
     private var product1Price: Float?
     private var product2Amount: Float?
@@ -122,7 +124,7 @@ class ViewController: UIViewController {
         
         // if the bottom of Textfield is below the top of keyboard, move up
         if bottomOfTextField > topOfKeyboard {
-            view.frame.origin.y = topOfKeyboard - bottomOfTextField - 10
+            view.frame.origin.y = topOfKeyboard - bottomOfTextField - SPACING_BETWEEN_KEYBOARD_AND_TEXT_FIELD
         }
     }
     
