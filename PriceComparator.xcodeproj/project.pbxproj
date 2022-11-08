@@ -107,12 +107,12 @@
 		CD73E72E290B135000FD650A /* PriceComparator */ = {
 			isa = PBXGroup;
 			children = (
+				CDD3AF8C291B0653004CA52E /* Model */,
 				CD73E72F290B135000FD650A /* AppDelegate.swift */,
 				CD73E731290B135000FD650A /* SceneDelegate.swift */,
 				CD73E733290B135000FD650A /* ViewController.swift */,
 				CD5E15D5291432DC002BE768 /* CompleteInputView.swift */,
 				CD5E15D929145804002BE768 /* ProductComparator.swift */,
-				CD0C24FE291AEF000042719D /* Product.swift */,
 				CD5E15DB29145A7F002BE768 /* ChepeastProduct.swift */,
 				CD5E15D729145424002BE768 /* CompleteInputDelegate.swift */,
 				CD73E738290B135300FD650A /* Assets.xcassets */,
@@ -137,6 +137,14 @@
 				CD73E752290B135400FD650A /* PriceComparatorUITestsLaunchTests.swift */,
 			);
 			path = PriceComparatorUITests;
+			sourceTree = "<group>";
+		};
+		CDD3AF8C291B0653004CA52E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD0C24FE291AEF000042719D /* Product.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
