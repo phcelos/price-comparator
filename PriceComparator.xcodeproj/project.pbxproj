@@ -12,25 +12,16 @@
 		CD5E15D829145424002BE768 /* CompleteInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E15D729145424002BE768 /* CompleteInputDelegate.swift */; };
 		CD5E15DA29145804002BE768 /* ProductComparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E15D929145804002BE768 /* ProductComparator.swift */; };
 		CD5E15DC29145A7F002BE768 /* ChepeastProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E15DB29145A7F002BE768 /* ChepeastProduct.swift */; };
+		CD6DDFB4291D9A4E008FC4E0 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6DDFB3291D9A4E008FC4E0 /* ViewControllerTests.swift */; };
 		CD73E730290B135000FD650A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD73E72F290B135000FD650A /* AppDelegate.swift */; };
 		CD73E732290B135000FD650A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD73E731290B135000FD650A /* SceneDelegate.swift */; };
 		CD73E734290B135000FD650A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD73E733290B135000FD650A /* ViewController.swift */; };
 		CD73E739290B135300FD650A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD73E738290B135300FD650A /* Assets.xcassets */; };
 		CD73E73C290B135300FD650A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD73E73A290B135300FD650A /* LaunchScreen.storyboard */; };
-		CD73E747290B135400FD650A /* PriceComparatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD73E746290B135400FD650A /* PriceComparatorTests.swift */; };
-		CD73E751290B135400FD650A /* PriceComparatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD73E750290B135400FD650A /* PriceComparatorUITests.swift */; };
-		CD73E753290B135400FD650A /* PriceComparatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD73E752290B135400FD650A /* PriceComparatorUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		CD73E743290B135400FD650A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CD73E724290B135000FD650A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CD73E72B290B135000FD650A;
-			remoteInfo = PriceComparator;
-		};
-		CD73E74D290B135400FD650A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CD73E724290B135000FD650A /* Project object */;
 			proxyType = 1;
@@ -45,6 +36,7 @@
 		CD5E15D729145424002BE768 /* CompleteInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteInputDelegate.swift; sourceTree = "<group>"; };
 		CD5E15D929145804002BE768 /* ProductComparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductComparator.swift; sourceTree = "<group>"; };
 		CD5E15DB29145A7F002BE768 /* ChepeastProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChepeastProduct.swift; sourceTree = "<group>"; };
+		CD6DDFB3291D9A4E008FC4E0 /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
 		CD73E72C290B135000FD650A /* PriceComparator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PriceComparator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD73E72F290B135000FD650A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD73E731290B135000FD650A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,10 +45,6 @@
 		CD73E73B290B135300FD650A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD73E73D290B135300FD650A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD73E742290B135400FD650A /* PriceComparatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PriceComparatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD73E746290B135400FD650A /* PriceComparatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceComparatorTests.swift; sourceTree = "<group>"; };
-		CD73E74C290B135400FD650A /* PriceComparatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PriceComparatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD73E750290B135400FD650A /* PriceComparatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceComparatorUITests.swift; sourceTree = "<group>"; };
-		CD73E752290B135400FD650A /* PriceComparatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceComparatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,13 +62,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD73E749290B135400FD650A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -89,7 +70,6 @@
 			children = (
 				CD73E72E290B135000FD650A /* PriceComparator */,
 				CD73E745290B135400FD650A /* PriceComparatorTests */,
-				CD73E74F290B135400FD650A /* PriceComparatorUITests */,
 				CD73E72D290B135000FD650A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,7 +79,6 @@
 			children = (
 				CD73E72C290B135000FD650A /* PriceComparator.app */,
 				CD73E742290B135400FD650A /* PriceComparatorTests.xctest */,
-				CD73E74C290B135400FD650A /* PriceComparatorUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,18 +104,9 @@
 		CD73E745290B135400FD650A /* PriceComparatorTests */ = {
 			isa = PBXGroup;
 			children = (
-				CD73E746290B135400FD650A /* PriceComparatorTests.swift */,
+				CD6DDFB3291D9A4E008FC4E0 /* ViewControllerTests.swift */,
 			);
 			path = PriceComparatorTests;
-			sourceTree = "<group>";
-		};
-		CD73E74F290B135400FD650A /* PriceComparatorUITests */ = {
-			isa = PBXGroup;
-			children = (
-				CD73E750290B135400FD650A /* PriceComparatorUITests.swift */,
-				CD73E752290B135400FD650A /* PriceComparatorUITestsLaunchTests.swift */,
-			);
-			path = PriceComparatorUITests;
 			sourceTree = "<group>";
 		};
 		CDD3AF8C291B0653004CA52E /* Model */ = {
@@ -185,24 +155,6 @@
 			productReference = CD73E742290B135400FD650A /* PriceComparatorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		CD73E74B290B135400FD650A /* PriceComparatorUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CD73E75C290B135400FD650A /* Build configuration list for PBXNativeTarget "PriceComparatorUITests" */;
-			buildPhases = (
-				CD73E748290B135400FD650A /* Sources */,
-				CD73E749290B135400FD650A /* Frameworks */,
-				CD73E74A290B135400FD650A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CD73E74E290B135400FD650A /* PBXTargetDependency */,
-			);
-			name = PriceComparatorUITests;
-			productName = PriceComparatorUITests;
-			productReference = CD73E74C290B135400FD650A /* PriceComparatorUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -217,10 +169,6 @@
 						CreatedOnToolsVersion = 13.2.1;
 					};
 					CD73E741290B135400FD650A = {
-						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = CD73E72B290B135000FD650A;
-					};
-					CD73E74B290B135400FD650A = {
 						CreatedOnToolsVersion = 13.2.1;
 						TestTargetID = CD73E72B290B135000FD650A;
 					};
@@ -241,7 +189,6 @@
 			targets = (
 				CD73E72B290B135000FD650A /* PriceComparator */,
 				CD73E741290B135400FD650A /* PriceComparatorTests */,
-				CD73E74B290B135400FD650A /* PriceComparatorUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -257,13 +204,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CD73E740290B135400FD650A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CD73E74A290B135400FD650A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -292,16 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD73E747290B135400FD650A /* PriceComparatorTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CD73E748290B135400FD650A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CD73E753290B135400FD650A /* PriceComparatorUITestsLaunchTests.swift in Sources */,
-				CD73E751290B135400FD650A /* PriceComparatorUITests.swift in Sources */,
+				CD6DDFB4291D9A4E008FC4E0 /* ViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,11 +243,6 @@
 			isa = PBXTargetDependency;
 			target = CD73E72B290B135000FD650A /* PriceComparator */;
 			targetProxy = CD73E743290B135400FD650A /* PBXContainerItemProxy */;
-		};
-		CD73E74E290B135400FD650A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CD73E72B290B135000FD650A /* PriceComparator */;
-			targetProxy = CD73E74D290B135400FD650A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -538,40 +464,6 @@
 			};
 			name = Release;
 		};
-		CD73E75D290B135400FD650A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.phcelos.PriceComparatorUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = PriceComparator;
-			};
-			name = Debug;
-		};
-		CD73E75E290B135400FD650A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.phcelos.PriceComparatorUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = PriceComparator;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -598,15 +490,6 @@
 			buildConfigurations = (
 				CD73E75A290B135400FD650A /* Debug */,
 				CD73E75B290B135400FD650A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CD73E75C290B135400FD650A /* Build configuration list for PBXNativeTarget "PriceComparatorUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CD73E75D290B135400FD650A /* Debug */,
-				CD73E75E290B135400FD650A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
