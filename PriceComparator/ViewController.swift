@@ -16,7 +16,7 @@ final class ViewController: UIViewController {
     
     private var activeCompleteInput: CompleteInputView?
     
-    private lazy var titleLabel: UILabel = {
+    lazy var titleLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.text = "Comparador de Preços"
@@ -25,31 +25,31 @@ final class ViewController: UIViewController {
         return view
     }()
     
-    private lazy var product1AmountInput: CompleteInputView = {
+    lazy var product1AmountInput: CompleteInputView = {
         let view = CompleteInputView(labelText: "Peso produto 1: ", placeHolder: "Peso em gramas", delegate: self)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private lazy var product1PriceInput: CompleteInputView = {
+    lazy var product1PriceInput: CompleteInputView = {
         let view = CompleteInputView(labelText: "Preço produto 1: ", placeHolder: "Preço", delegate: self)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private lazy var product2AmountInput: CompleteInputView = {
+    lazy var product2AmountInput: CompleteInputView = {
         let view = CompleteInputView(labelText: "Peso produto 2: ", placeHolder: "Peso em gramas", delegate: self)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private lazy var product2PriceInput: CompleteInputView = {
+    lazy var product2PriceInput: CompleteInputView = {
         let view = CompleteInputView(labelText: "Preço produto 2: ", placeHolder: "Preço", delegate: self)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private lazy var resultLabel: UILabel = {
+    lazy var resultLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.text = "Resultado"
@@ -58,7 +58,7 @@ final class ViewController: UIViewController {
         return view
     }()
     
-    private lazy var mainStackView: UIStackView = {
+    lazy var mainStackView: UIStackView = {
         let view = UIStackView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .blue
@@ -72,7 +72,7 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
         
         setupView()
-
+        
         setupViewHierarchy()
         setupConstraints()
         setupKeyboardEvents()
