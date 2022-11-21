@@ -20,4 +20,25 @@ class ViewControllerTests: XCTestCase {
         
         XCTAssertEqual(sut.view.backgroundColor, .white)
     }
+    
+    func test_viewDidLoad_setupViewHierarchy() {
+        let sut = makeSUT()
+        let mainStackView = sut.mainStackView
+        
+        XCTAssertTrue(sut.view.subviews.contains(sut.titleLabel))
+        XCTAssertTrue(sut.view.subviews.contains(mainStackView))
+        
+        let mainStackViewSubviews = [
+            sut.product1AmountInput,
+            sut.product1PriceInput,
+            sut.product2AmountInput,
+            sut.product2PriceInput,
+            sut.resultLabel
+        ]
+        
+        for view in mainStackViewSubviews {
+            XCTAssertTrue(mainStackView.subviews.contains(view))
+        }
+    }
 }
+
