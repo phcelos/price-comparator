@@ -11,10 +11,21 @@ final class ViewController: UIViewController {
     
     private let SPACING_BETWEEN_KEYBOARD_AND_TEXT_FIELD: CGFloat = 10
     
+    private let notificationCenter: NotificationCenterProtocol
     private var product1 = Product()
     private var product2 = Product()
     
     private var activeCompleteInput: CompleteInputView?
+    
+    init(notificationCenter: NotificationCenterProtocol = NotificationCenter.default) {
+        self.notificationCenter = notificationCenter
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     lazy var titleLabel: UILabel = {
         let view = UILabel()
@@ -105,8 +116,8 @@ final class ViewController: UIViewController {
     }
     
     private func setupKeyboardEvents() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     private func updateResultLabel(chepeastProduct: ChepeastProduct?) {
