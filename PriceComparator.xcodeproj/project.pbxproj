@@ -18,6 +18,8 @@
 		CD73E734290B135000FD650A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD73E733290B135000FD650A /* ViewController.swift */; };
 		CD73E739290B135300FD650A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD73E738290B135300FD650A /* Assets.xcassets */; };
 		CD73E73C290B135300FD650A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD73E73A290B135300FD650A /* LaunchScreen.storyboard */; };
+		CDCDDB83292D41FB0026F468 /* NotificationCenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCDDB82292D41FB0026F468 /* NotificationCenterSpy.swift */; };
+		CDCDDB86292D42C10026F468 /* NotificationCenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCDDB85292D42C10026F468 /* NotificationCenterProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		CD73E73B290B135300FD650A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD73E73D290B135300FD650A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD73E742290B135400FD650A /* PriceComparatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PriceComparatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDCDDB82292D41FB0026F468 /* NotificationCenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterSpy.swift; sourceTree = "<group>"; };
+		CDCDDB85292D42C10026F468 /* NotificationCenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				CDD3AF8C291B0653004CA52E /* Model */,
+				CDCDDB84292D42690026F468 /* Protocols */,
 				CD73E72F290B135000FD650A /* AppDelegate.swift */,
 				CD73E731290B135000FD650A /* SceneDelegate.swift */,
 				CD73E733290B135000FD650A /* ViewController.swift */,
@@ -105,8 +110,17 @@
 			isa = PBXGroup;
 			children = (
 				CD6DDFB3291D9A4E008FC4E0 /* ViewControllerTests.swift */,
+				CDCDDB82292D41FB0026F468 /* NotificationCenterSpy.swift */,
 			);
 			path = PriceComparatorTests;
+			sourceTree = "<group>";
+		};
+		CDCDDB84292D42690026F468 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CDCDDB85292D42C10026F468 /* NotificationCenterProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		CDD3AF8C291B0653004CA52E /* Model */ = {
@@ -224,6 +238,7 @@
 				CD73E730290B135000FD650A /* AppDelegate.swift in Sources */,
 				CD73E732290B135000FD650A /* SceneDelegate.swift in Sources */,
 				CD5E15D6291432DC002BE768 /* CompleteInputView.swift in Sources */,
+				CDCDDB86292D42C10026F468 /* NotificationCenterProtocol.swift in Sources */,
 				CD5E15DC29145A7F002BE768 /* ChepeastProduct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDCDDB83292D41FB0026F468 /* NotificationCenterSpy.swift in Sources */,
 				CD6DDFB4291D9A4E008FC4E0 /* ViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
