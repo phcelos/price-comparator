@@ -61,6 +61,14 @@ class ViewControllerTests: XCTestCase {
         let namesExpected = [UIResponder.keyboardWillShowNotification, UIResponder.keyboardWillHideNotification]
         XCTAssertEqual(namesPassed, namesExpected)
     }
+    func test_whenViewControllerIsInitialized_thenCompleteInputViewsDelegatesAreSet() {
+        let sut = makeSUT()
+        
+        XCTAssertIdentical(sut.product1AmountInput.delegate as AnyObject, sut)
+        XCTAssertIdentical(sut.product2AmountInput.delegate as AnyObject, sut)
+        XCTAssertIdentical(sut.product1PriceInput.delegate as AnyObject, sut)
+        XCTAssertIdentical(sut.product2PriceInput.delegate as AnyObject, sut)
+    }
 }
 
 
