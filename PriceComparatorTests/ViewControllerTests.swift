@@ -10,19 +10,25 @@ import XCTest
 @testable import PriceComparator
 
 class ViewControllerTests: XCTestCase {
+    private lazy var notificationCenterSpy = NotificationCenterSpy()
+    
     func makeSUT() -> ViewController {
-        let sut = ViewController()
-        return sut
+        ViewController(notificationCenter: notificationCenterSpy)
     }
     
     func test_viewDidLoad_setsBackgroundColor() {
         let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
         
         XCTAssertEqual(sut.view.backgroundColor, .white)
     }
     
     func test_viewDidLoad_setupViewHierarchy() {
         let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
         let mainStackView = sut.mainStackView
         
         XCTAssertTrue(sut.view.subviews.contains(sut.titleLabel))
@@ -40,5 +46,22 @@ class ViewControllerTests: XCTestCase {
             XCTAssertTrue(mainStackView.subviews.contains(view))
         }
     }
+    
+    func test_viewDidLoad_setsKeyboardEvents() {
+        let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        XCTAssertEqual(notificationCenterSpy.addObserverCount, 2)
+        
+        let observersPassed = notificationCenterSpy.addObserverObserversPassed as? [ViewController]
+        XCTAssertEqual(observersPassed, [sut, sut])
+        
+        let namesPassed = notificationCenterSpy.addObserverNamesPassed
+        let namesExpected = [UIResponder.keyboardWillShowNotification, UIResponder.keyboardWillHideNotification]
+        XCTAssertEqual(namesPassed, namesExpected)
+    }
 }
+
+
 
