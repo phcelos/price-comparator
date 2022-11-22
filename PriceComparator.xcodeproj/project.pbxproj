@@ -90,15 +90,15 @@
 		CD73E72E290B135000FD650A /* PriceComparator */ = {
 			isa = PBXGroup;
 			children = (
+				CDCDDB87292D4A8C0026F468 /* Enums */,
 				CDD3AF8C291B0653004CA52E /* Model */,
 				CDCDDB84292D42690026F468 /* Protocols */,
 				CDCDDB88292D4AAF0026F468 /* Views */,
 				CD73E72F290B135000FD650A /* AppDelegate.swift */,
 				CD73E731290B135000FD650A /* SceneDelegate.swift */,
 				CD73E733290B135000FD650A /* ViewController.swift */,
-				CD5E15D929145804002BE768 /* ProductComparator.swift */,
-				CD5E15DB29145A7F002BE768 /* ChepeastProduct.swift */,
 				CD5E15D729145424002BE768 /* CompleteInputDelegate.swift */,
+				CD5E15D929145804002BE768 /* ProductComparator.swift */,
 				CD73E738290B135300FD650A /* Assets.xcassets */,
 				CD73E73A290B135300FD650A /* LaunchScreen.storyboard */,
 				CD73E73D290B135300FD650A /* Info.plist */,
@@ -121,6 +121,14 @@
 				CDCDDB85292D42C10026F468 /* NotificationCenterProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CDCDDB87292D4A8C0026F468 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				CD5E15DB29145A7F002BE768 /* ChepeastProduct.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		CDCDDB88292D4AAF0026F468 /* Views */ = {
