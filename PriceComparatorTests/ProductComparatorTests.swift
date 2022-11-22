@@ -45,4 +45,13 @@ class ProductComparatorTests: XCTestCase {
         
         XCTAssertEqual(chepeastProduct, nil)
     }
+    
+    func test_calculateTheCheapestProduct_whenProductAmountIsZero_shouldReturnNil() {
+        let product1 = Product(price: 10, amount: 0)
+        let product2 = Product(price: 20, amount: 300)
+        
+        let chepeastProduct = ProductComparator.calculateTheChepeastProduct(product1: product1, product2: product2)
+        
+        XCTAssertEqual(chepeastProduct, nil)
+    }
 }
