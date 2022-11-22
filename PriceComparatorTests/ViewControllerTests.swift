@@ -18,7 +18,6 @@ class ViewControllerTests: XCTestCase {
     
     func test_viewDidLoad_setsBackgroundColor() {
         let sut = makeSUT()
-        
         sut.loadViewIfNeeded()
         
         XCTAssertEqual(sut.view.backgroundColor, .white)
@@ -26,7 +25,6 @@ class ViewControllerTests: XCTestCase {
     
     func test_viewDidLoad_setupViewHierarchy() {
         let sut = makeSUT()
-        
         sut.loadViewIfNeeded()
         
         let mainStackView = sut.mainStackView
@@ -49,7 +47,6 @@ class ViewControllerTests: XCTestCase {
     
     func test_viewDidLoad_setsKeyboardEvents() {
         let sut = makeSUT()
-        
         sut.loadViewIfNeeded()
         
         XCTAssertEqual(notificationCenterSpy.addObserverCount, 2)
@@ -61,6 +58,7 @@ class ViewControllerTests: XCTestCase {
         let namesExpected = [UIResponder.keyboardWillShowNotification, UIResponder.keyboardWillHideNotification]
         XCTAssertEqual(namesPassed, namesExpected)
     }
+    
     func test_whenViewControllerIsInitialized_thenCompleteInputViewsDelegatesAreSet() {
         let sut = makeSUT()
         
@@ -68,6 +66,25 @@ class ViewControllerTests: XCTestCase {
         XCTAssertIdentical(sut.product2AmountInput.delegate as AnyObject, sut)
         XCTAssertIdentical(sut.product1PriceInput.delegate as AnyObject, sut)
         XCTAssertIdentical(sut.product2PriceInput.delegate as AnyObject, sut)
+    }
+    
+    func test_completeInputDidFinishEditingWithText_updatesResultLabel() {
+        let sut = makeSUT()
+        
+        sut.completeInput(sut.product1AmountInput, didFinishEditingWithText: "100")
+        XCTAssertEqual(sut.resultLabel.text, "Resultado", "product1AmountInput")
+
+        sut.completeInput(sut.product2AmountInput, didFinishEditingWithText: "200")
+        XCTAssertEqual(sut.resultLabel.text, "Resultado", "product2AmountInput")
+        
+        sut.completeInput(sut.product1PriceInput, didFinishEditingWithText: "10")
+        XCTAssertEqual(sut.resultLabel.text, "Resultado", "product1PriceInput")
+        
+        sut.completeInput(sut.product2PriceInput, didFinishEditingWithText: "30")
+        XCTAssertEqual(sut.resultLabel.text, ChepeastProduct.product1.rawValue)
+        
+        sut.completeInput(sut.product1PriceInput, didFinishEditingWithText: "")
+        XCTAssertEqual(sut.resultLabel.text, "Resultado", "product1PriceInput should be empty")
     }
 }
 

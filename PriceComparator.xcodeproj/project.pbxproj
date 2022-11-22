@@ -106,8 +106,8 @@
 		CD73E745290B135400FD650A /* PriceComparatorTests */ = {
 			isa = PBXGroup;
 			children = (
-				CD6DDFB3291D9A4E008FC4E0 /* ViewControllerTests.swift */,
 				CDCDDB82292D41FB0026F468 /* NotificationCenterSpy.swift */,
+				CD6DDFB3291D9A4E008FC4E0 /* ViewControllerTests.swift */,
 			);
 			path = PriceComparatorTests;
 			sourceTree = "<group>";

@@ -16,7 +16,7 @@ final class CompleteInputView: UIStackView {
     
     private let labelText: String
     private let placeHolder: String
-    private let delegate: CompleteInputDelegate
+    let delegate: CompleteInputDelegate
     
     private lazy var label: UILabel = {
         let view = UILabel()
