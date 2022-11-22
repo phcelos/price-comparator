@@ -19,6 +19,7 @@
 		CD73E73C290B135300FD650A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD73E73A290B135300FD650A /* LaunchScreen.storyboard */; };
 		CDCDDB83292D41FB0026F468 /* NotificationCenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCDDB82292D41FB0026F468 /* NotificationCenterSpy.swift */; };
 		CDCDDB86292D42C10026F468 /* NotificationCenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCDDB85292D42C10026F468 /* NotificationCenterProtocol.swift */; };
+		CDCDDB8A292D6A360026F468 /* ProductComparatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCDDB89292D6A360026F468 /* ProductComparatorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		CD73E742290B135400FD650A /* PriceComparatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PriceComparatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDCDDB82292D41FB0026F468 /* NotificationCenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterSpy.swift; sourceTree = "<group>"; };
 		CDCDDB85292D42C10026F468 /* NotificationCenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterProtocol.swift; sourceTree = "<group>"; };
+		CDCDDB89292D6A360026F468 /* ProductComparatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductComparatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			children = (
 				CDCDDB82292D41FB0026F468 /* NotificationCenterSpy.swift */,
 				CD6DDFB3291D9A4E008FC4E0 /* ViewControllerTests.swift */,
+				CDCDDB89292D6A360026F468 /* ProductComparatorTests.swift */,
 			);
 			path = PriceComparatorTests;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				CDCDDB83292D41FB0026F468 /* NotificationCenterSpy.swift in Sources */,
 				CD6DDFB4291D9A4E008FC4E0 /* ViewControllerTests.swift in Sources */,
+				CDCDDB8A292D6A360026F468 /* ProductComparatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
