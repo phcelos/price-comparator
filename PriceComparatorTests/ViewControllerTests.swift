@@ -68,6 +68,15 @@ class ViewControllerTests: XCTestCase {
         XCTAssertIdentical(sut.product2PriceInput.delegate as AnyObject, sut)
     }
     
+    func test_completeInputDidStartEditing_setsActiveCompleteInput() {
+        let sut = makeSUT()
+        let completeInput = sut.product1AmountInput
+        
+        sut.completeInputDidStartEditing(completeInput)
+        
+        XCTAssertIdentical(sut.activeCompleteInput, completeInput)
+    }
+    
     func test_completeInputDidFinishEditingWithText_updatesResultLabel() {
         let sut = makeSUT()
         

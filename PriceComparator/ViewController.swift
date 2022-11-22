@@ -15,7 +15,7 @@ final class ViewController: UIViewController {
     private var product1 = Product()
     private var product2 = Product()
     
-    private var activeCompleteInput: CompleteInputView?
+    var activeCompleteInput: CompleteInputView?
     
     init(notificationCenter: NotificationCenterProtocol = NotificationCenter.default) {
         self.notificationCenter = notificationCenter
