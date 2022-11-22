@@ -23,7 +23,7 @@ struct ProductComparator {
     private static func gramPriceOf(product: Product) -> Float? {
         guard
             let fullPrice = product.price,
-            let amount = product.amount
+            let amount = product.amount, amount != 0
         else {
             return nil
         }
