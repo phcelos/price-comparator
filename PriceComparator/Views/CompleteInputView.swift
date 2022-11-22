@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol CompleteInputDelegate {
+    func completeInputDidStartEditing(_ completeInput: CompleteInputView)
+    func completeInput(_ completeInput: CompleteInputView, didFinishEditingWithText text: String)
+}
+
 final class CompleteInputView: UIStackView {
     
     private let labelText: String
