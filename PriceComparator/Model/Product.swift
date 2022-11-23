@@ -7,7 +7,7 @@
 
 typealias Grams = Float
 
-struct Product {
+class Product {
     var price: Float?
     var amount: Float?
 }
