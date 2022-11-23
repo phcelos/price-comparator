@@ -15,6 +15,8 @@ final class ViewController: UIViewController {
     private var product1 = Product()
     private var product2 = Product()
     
+    let mainView = MainView(frame: .zero)
+    
     var activeCompleteInput: CompleteInputView?
     
     init(notificationCenter: NotificationCenterProtocol = NotificationCenter.default) {
@@ -27,101 +29,31 @@ final class ViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    lazy var titleLabel: UILabel = {
-        let view = UILabel()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.text = "Comparador de Preços"
-        view.textColor = .black
-        view.font = UIFont.boldSystemFont(ofSize: 20)
-        return view
-    }()
-    
-    lazy var product1AmountInput: CompleteInputView = {
-        let view = CompleteInputView(labelText: "Peso produto 1: ", placeHolder: "Peso em gramas", delegate: self)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    lazy var product1PriceInput: CompleteInputView = {
-        let view = CompleteInputView(labelText: "Preço produto 1: ", placeHolder: "Preço", delegate: self)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    lazy var product2AmountInput: CompleteInputView = {
-        let view = CompleteInputView(labelText: "Peso produto 2: ", placeHolder: "Peso em gramas", delegate: self)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    lazy var product2PriceInput: CompleteInputView = {
-        let view = CompleteInputView(labelText: "Preço produto 2: ", placeHolder: "Preço", delegate: self)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    lazy var resultLabel: UILabel = {
-        let view = UILabel()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.text = "Resultado"
-        view.font = UIFont.boldSystemFont(ofSize: 20)
-        view.adjustsFontSizeToFitWidth = true
-        return view
-    }()
-    
-    lazy var mainStackView: UIStackView = {
-        let view = UIStackView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .blue
-        view.axis = .vertical
-        view.alignment = .center
-        view.distribution = .equalSpacing
-        return view
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupView()
+        mainView.delegate = self
         
-        setupViewHierarchy()
+        view.backgroundColor = .white
+        view.addSubview(mainView)
         setupConstraints()
         setupKeyboardEvents()
     }
     
-    private func setupView() {
-        view.backgroundColor = .white
-    }
-    
-    private func setupViewHierarchy() {
-        view.addSubview(titleLabel)
-        view.addSubview(mainStackView)
-        
-        mainStackView.addArrangedSubview(product1AmountInput)
-        mainStackView.addArrangedSubview(product1PriceInput)
-        mainStackView.addArrangedSubview(product2AmountInput)
-        mainStackView.addArrangedSubview(product2PriceInput)
-        mainStackView.addArrangedSubview(resultLabel)
-    }
-    
     private func setupConstraints() {
-        titleLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-        titleLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        
-        mainStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor).isActive = true
-        mainStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100).isActive = true
-        mainStackView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
-        mainStackView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
+        mainView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        mainView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100).isActive = true
+        mainView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
+        mainView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
     }
-    
+
     private func setupKeyboardEvents() {
         notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     private func updateResultLabel(chepeastProduct: ChepeastProduct?) {
-        resultLabel.text = chepeastProduct?.rawValue ?? "Resultado"
+        mainView.resultLabel.text = chepeastProduct?.rawValue ?? "Resultado"
     }
     
     @objc private func keyboardWillShow(notification: NSNotification) {
@@ -156,13 +88,13 @@ extension ViewController: CompleteInputDelegate {
         let insertedValue = Float(text)
         
         switch completeInput {
-        case product1AmountInput:
+        case mainView.product1AmountInput:
             product1.amount = insertedValue
-        case product1PriceInput:
+        case mainView.product1PriceInput:
             product1.price = insertedValue
-        case product2AmountInput:
+        case mainView.product2AmountInput:
             product2.amount = insertedValue
-        case product2PriceInput:
+        case mainView.product2PriceInput:
             product2.price = insertedValue
         default:
             return
