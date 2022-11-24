@@ -13,9 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-	
-    - name: Select Xcode
-      run: sudo xcode-select -switch /Applications/Xcode_13.2.1.app 
+      with:
+        xcode-version: '13.2.1'
 
     - name: Build and test
-      run: xcodebuild clean build test -workspace App/PriceComparator.xcworkspace -scheme "CI" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
+      run: xcodebuild clean build test -project PriceComparator.xcodeproj -scheme "CI" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
