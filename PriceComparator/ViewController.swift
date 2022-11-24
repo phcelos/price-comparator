@@ -9,7 +9,7 @@ import UIKit
 
 final class ViewController: UIViewController {
     
-    private let SPACING_BETWEEN_KEYBOARD_AND_TEXT_FIELD: CGFloat = 10
+    private let spacingBetweenKeyboardAndTextField: CGFloat = 10
     
     private let notificationCenter: NotificationCenterProtocol
     private var product1ViewModel = ProductViewModel(product: Product())
@@ -70,7 +70,7 @@ final class ViewController: UIViewController {
         
         // if the bottom of Textfield is below the top of keyboard, move up
         if bottomOfTextField > topOfKeyboard {
-            view.frame.origin.y = topOfKeyboard - bottomOfTextField - SPACING_BETWEEN_KEYBOARD_AND_TEXT_FIELD
+            view.frame.origin.y = topOfKeyboard - bottomOfTextField - spacingBetweenKeyboardAndTextField
         }
     }
     
