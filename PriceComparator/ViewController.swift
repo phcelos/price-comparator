@@ -12,8 +12,8 @@ final class ViewController: UIViewController {
     private let SPACING_BETWEEN_KEYBOARD_AND_TEXT_FIELD: CGFloat = 10
     
     private let notificationCenter: NotificationCenterProtocol
-    private var product1 = Product()
-    private var product2 = Product()
+    private var product1ViewModel = ProductViewModel(product: Product())
+    private var product2ViewModel = ProductViewModel(product: Product())
     
     let mainView = MainView(frame: .zero)
     
@@ -89,19 +89,19 @@ extension ViewController: CompleteInputDelegate {
         
         switch completeInput {
         case mainView.product1AmountInput:
-            product1.amount = insertedValue
+            product1ViewModel.amount = insertedValue
         case mainView.product1PriceInput:
-            product1.price = insertedValue
+            product1ViewModel.price = insertedValue
         case mainView.product2AmountInput:
-            product2.amount = insertedValue
+            product2ViewModel.amount = insertedValue
         case mainView.product2PriceInput:
-            product2.price = insertedValue
+            product2ViewModel.price = insertedValue
         default:
             return
         }
         
         let chepeastProduct = ProductComparator.calculateTheChepeastProduct(
-            product1: product1, product2: product2)
+            product1: product1ViewModel.product, product2: product2ViewModel.product)
         
         updateResultLabel(chepeastProduct: chepeastProduct)
     }
