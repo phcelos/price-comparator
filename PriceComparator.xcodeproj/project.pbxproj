@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CD0C24FF291AEF010042719D /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0C24FE291AEF000042719D /* Product.swift */; };
+		CD46660E2935699C00AE9C8D /* MainViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD46660D2935699C00AE9C8D /* MainViewTests.swift */; };
 		CD52F10C292EAD0600350E80 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52F10B292EAD0600350E80 /* MainView.swift */; };
 		CD52F10F292EC1C600350E80 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52F10E292EC1C600350E80 /* ProductViewModel.swift */; };
 		CD5E15D6291432DC002BE768 /* CompleteInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E15D5291432DC002BE768 /* CompleteInputView.swift */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		CD0C24FE291AEF000042719D /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		CD46660D2935699C00AE9C8D /* MainViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewTests.swift; sourceTree = "<group>"; };
 		CD52F10B292EAD0600350E80 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CD52F10E292EC1C600350E80 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		CD5E15D5291432DC002BE768 /* CompleteInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteInputView.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		CD73E745290B135400FD650A /* PriceComparatorTests */ = {
 			isa = PBXGroup;
 			children = (
+				CD46660D2935699C00AE9C8D /* MainViewTests.swift */,
 				CDCDDB82292D41FB0026F468 /* NotificationCenterSpy.swift */,
 				CD6DDFB3291D9A4E008FC4E0 /* ViewControllerTests.swift */,
 				CDCDDB89292D6A360026F468 /* ProductComparatorTests.swift */,
@@ -279,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDCDDB83292D41FB0026F468 /* NotificationCenterSpy.swift in Sources */,
+				CD46660E2935699C00AE9C8D /* MainViewTests.swift in Sources */,
 				CD6DDFB4291D9A4E008FC4E0 /* ViewControllerTests.swift in Sources */,
 				CDCDDB8A292D6A360026F468 /* ProductComparatorTests.swift in Sources */,
 			);
