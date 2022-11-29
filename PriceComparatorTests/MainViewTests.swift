@@ -33,4 +33,16 @@ class MainViewTests: XCTestCase {
             XCTAssertTrue(mainStackView.subviews.contains(view))
         }
     }
+    
+    func test_whenViewControllerIsInitialized_thenCompleteInputViewsDelegatesAreSet() {
+        let viewController = ViewController()
+        viewController.loadViewIfNeeded()
+
+        let sut = viewController.mainView
+
+        XCTAssertIdentical(sut.product1AmountInput.delegate as AnyObject, sut)
+        XCTAssertIdentical(sut.product2AmountInput.delegate as AnyObject, sut)
+        XCTAssertIdentical(sut.product1PriceInput.delegate as AnyObject, sut)
+        XCTAssertIdentical(sut.product2PriceInput.delegate as AnyObject, sut)        
+    }
 }
