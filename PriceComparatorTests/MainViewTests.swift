@@ -15,18 +15,18 @@ class MainViewTests: XCTestCase {
     }
     
     func test_viewHierarchy() {
-        let mainView = makeSUT()        
-        let mainStackView = mainView.mainStackView
+        let sut = makeSUT()        
+        let mainStackView = sut.mainStackView
         
-        XCTAssertTrue(mainView.subviews.contains(mainView.titleLabel))
-        XCTAssertTrue(mainView.subviews.contains(mainStackView))
+        XCTAssertTrue(sut.subviews.contains(sut.titleLabel))
+        XCTAssertTrue(sut.subviews.contains(mainStackView))
         
         let mainStackViewSubviews = [
-            mainView.product1AmountInput,
-            mainView.product1PriceInput,
-            mainView.product2AmountInput,
-            mainView.product2PriceInput,
-            mainView.resultLabel
+            sut.product1AmountInput,
+            sut.product1PriceInput,
+            sut.product2AmountInput,
+            sut.product2PriceInput,
+            sut.resultLabel
         ]
         
         for view in mainStackViewSubviews {
