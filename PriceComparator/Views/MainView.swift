@@ -9,7 +9,7 @@ import UIKit
 
 final class MainView: UIView {
     
-    var delegate: CompleteInputDelegate?
+    weak var delegate: CompleteInputDelegate?
     
     var titleLabel: UILabel = {
         let view = UILabel()
