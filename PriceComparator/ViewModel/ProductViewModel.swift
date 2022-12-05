@@ -8,7 +8,7 @@
 import Foundation
 
 class ProductViewModel {
-    let product: Product
+    var product: Product
     
     var amount: Float? {
         get {
