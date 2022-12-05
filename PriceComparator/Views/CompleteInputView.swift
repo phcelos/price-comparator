@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol CompleteInputDelegate {
+protocol CompleteInputDelegate: AnyObject {
     func completeInputDidStartEditing(_ completeInput: CompleteInputView)
     func completeInput(_ completeInput: CompleteInputView, didFinishEditingWithText text: String)
 }
@@ -16,7 +16,7 @@ final class CompleteInputView: UIStackView {
     
     private let labelText: String
     private let placeHolder: String
-    var delegate: CompleteInputDelegate?
+    weak var delegate: CompleteInputDelegate?
     
     private lazy var label: UILabel = {
         let view = UILabel()
