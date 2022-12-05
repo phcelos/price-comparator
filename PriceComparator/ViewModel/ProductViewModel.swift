@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ProductViewModel {
+struct ProductViewModel {
     var product: Product
     
     var amount: Float? {
@@ -28,9 +28,5 @@ class ProductViewModel {
         set {
             product.price = newValue
         }
-    }
-    
-    init(product: Product) {
-        self.product = product
     }
 }
