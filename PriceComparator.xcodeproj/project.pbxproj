@@ -125,8 +125,8 @@
 			children = (
 				CD46660D2935699C00AE9C8D /* MainViewTests.swift */,
 				CDCDDB82292D41FB0026F468 /* NotificationCenterSpy.swift */,
-				CD6DDFB3291D9A4E008FC4E0 /* ViewControllerTests.swift */,
 				CDCDDB89292D6A360026F468 /* ProductComparatorTests.swift */,
+				CD6DDFB3291D9A4E008FC4E0 /* ViewControllerTests.swift */,
 			);
 			path = PriceComparatorTests;
 			sourceTree = "<group>";
