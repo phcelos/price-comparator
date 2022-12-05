@@ -11,7 +11,7 @@ final class MainView: UIView {
     
     weak var delegate: CompleteInputDelegate?
     
-    var titleLabel: UILabel = {
+    let titleLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.text = "Comparador de Preços"
@@ -20,31 +20,31 @@ final class MainView: UIView {
         return view
     }()
     
-    var product1AmountInput: CompleteInputView = {
+    let product1AmountInput: CompleteInputView = {
         let view = CompleteInputView(labelText: "Peso produto 1: ", placeHolder: "Peso em gramas")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    var product1PriceInput: CompleteInputView = {
+    let product1PriceInput: CompleteInputView = {
         let view = CompleteInputView(labelText: "Preço produto 1: ", placeHolder: "Preço")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    var product2AmountInput: CompleteInputView = {
+    let product2AmountInput: CompleteInputView = {
         let view = CompleteInputView(labelText: "Peso produto 2: ", placeHolder: "Peso em gramas")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    var product2PriceInput: CompleteInputView = {
+    let product2PriceInput: CompleteInputView = {
         let view = CompleteInputView(labelText: "Preço produto 2: ", placeHolder: "Preço")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    var resultLabel: UILabel = {
+    let resultLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.text = "Resultado"
@@ -53,7 +53,7 @@ final class MainView: UIView {
         return view
     }()
     
-    var mainStackView: UIStackView = {
+    let mainStackView: UIStackView = {
         let view = UIStackView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .blue
