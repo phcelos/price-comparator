@@ -23,6 +23,13 @@ class ViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.view.backgroundColor, .white)
     }
     
+    func test_whenViewDidLoad_addsMainViewAsSubview() {
+        let sut = makeSUT()
+        sut.loadViewIfNeeded()
+        
+        XCTAssertTrue(sut.view.subviews.contains(sut.mainView))
+    }
+    
     func test_viewDidLoad_setsKeyboardEvents() {
         let sut = makeSUT()
         sut.loadViewIfNeeded()
