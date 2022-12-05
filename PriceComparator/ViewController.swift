@@ -34,10 +34,14 @@ final class ViewController: UIViewController {
         
         mainView.delegate = self
         
-        view.backgroundColor = .white
-        view.addSubview(mainView)
+        setupView()
         setupConstraints()
         setupKeyboardEvents()
+    }
+    
+    private func setupView() {
+        view.backgroundColor = .white
+        view.addSubview(mainView)
     }
     
     private func setupConstraints() {
