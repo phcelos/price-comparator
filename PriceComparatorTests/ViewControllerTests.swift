@@ -23,26 +23,11 @@ class ViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.view.backgroundColor, .white)
     }
     
-    func test_viewDidLoad_setupViewHierarchy() {
+    func test_whenViewDidLoad_addsMainViewAsSubview() {
         let sut = makeSUT()
         sut.loadViewIfNeeded()
         
-        let mainStackView = sut.mainStackView
-        
-        XCTAssertTrue(sut.view.subviews.contains(sut.titleLabel))
-        XCTAssertTrue(sut.view.subviews.contains(mainStackView))
-        
-        let mainStackViewSubviews = [
-            sut.product1AmountInput,
-            sut.product1PriceInput,
-            sut.product2AmountInput,
-            sut.product2PriceInput,
-            sut.resultLabel
-        ]
-        
-        for view in mainStackViewSubviews {
-            XCTAssertTrue(mainStackView.subviews.contains(view))
-        }
+        XCTAssertTrue(sut.view.subviews.contains(sut.mainView))
     }
     
     func test_viewDidLoad_setsKeyboardEvents() {
@@ -59,18 +44,19 @@ class ViewControllerTests: XCTestCase {
         XCTAssertEqual(namesPassed, namesExpected)
     }
     
-    func test_whenViewControllerIsInitialized_thenCompleteInputViewsDelegatesAreSet() {
+    func test_whenViewControllerIsInitialized_thenMainViewDelegateIsSet() {
         let sut = makeSUT()
-        
-        XCTAssertIdentical(sut.product1AmountInput.delegate as AnyObject, sut)
-        XCTAssertIdentical(sut.product2AmountInput.delegate as AnyObject, sut)
-        XCTAssertIdentical(sut.product1PriceInput.delegate as AnyObject, sut)
-        XCTAssertIdentical(sut.product2PriceInput.delegate as AnyObject, sut)
+        sut.loadViewIfNeeded()
+
+        let mainView = sut.mainView
+        XCTAssertIdentical(mainView.delegate as AnyObject, sut)
     }
     
     func test_completeInputDidStartEditing_setsActiveCompleteInput() {
         let sut = makeSUT()
-        let completeInput = sut.product1AmountInput
+        let mainView = sut.mainView
+
+        let completeInput = mainView.product1AmountInput
         
         sut.completeInputDidStartEditing(completeInput)
         
@@ -79,21 +65,22 @@ class ViewControllerTests: XCTestCase {
     
     func test_completeInputDidFinishEditingWithText_updatesResultLabel() {
         let sut = makeSUT()
-        
-        sut.completeInput(sut.product1AmountInput, didFinishEditingWithText: "100")
-        XCTAssertEqual(sut.resultLabel.text, "Resultado", "product1AmountInput")
+        let mainView = sut.mainView
 
-        sut.completeInput(sut.product2AmountInput, didFinishEditingWithText: "200")
-        XCTAssertEqual(sut.resultLabel.text, "Resultado", "product2AmountInput")
+        sut.completeInput(mainView.product1AmountInput, didFinishEditingWithText: "100")
+        XCTAssertEqual(mainView.resultLabel.text, "Resultado", "product1AmountInput")
+
+        sut.completeInput(mainView.product2AmountInput, didFinishEditingWithText: "200")
+        XCTAssertEqual(mainView.resultLabel.text, "Resultado", "product2AmountInput")
         
-        sut.completeInput(sut.product1PriceInput, didFinishEditingWithText: "10")
-        XCTAssertEqual(sut.resultLabel.text, "Resultado", "product1PriceInput")
+        sut.completeInput(mainView.product1PriceInput, didFinishEditingWithText: "10")
+        XCTAssertEqual(mainView.resultLabel.text, "Resultado", "product1PriceInput")
         
-        sut.completeInput(sut.product2PriceInput, didFinishEditingWithText: "30")
-        XCTAssertEqual(sut.resultLabel.text, ChepeastProduct.product1.rawValue)
+        sut.completeInput(mainView.product2PriceInput, didFinishEditingWithText: "30")
+        XCTAssertEqual(mainView.resultLabel.text, ChepeastProduct.product1.rawValue)
         
-        sut.completeInput(sut.product1PriceInput, didFinishEditingWithText: "")
-        XCTAssertEqual(sut.resultLabel.text, "Resultado", "product1PriceInput should be empty")
+        sut.completeInput(mainView.product1PriceInput, didFinishEditingWithText: "")
+        XCTAssertEqual(mainView.resultLabel.text, "Resultado", "product1PriceInput should be empty")
     }
 }
 
