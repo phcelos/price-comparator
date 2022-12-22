@@ -20,7 +20,7 @@ class ViewControllerTests: XCTestCase {
         let sut = makeSUT()
         sut.loadViewIfNeeded()
         
-        XCTAssertEqual(sut.view.backgroundColor, .white)
+        XCTAssertEqual(sut.view.backgroundColor, .purple)
     }
     
     func test_whenViewDidLoad_addsMainViewAsSubview() {

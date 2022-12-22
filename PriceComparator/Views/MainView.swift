@@ -16,30 +16,38 @@ final class MainView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.text = "Comparador de Preços"
         view.textColor = .black
-        view.font = UIFont.boldSystemFont(ofSize: 20)
+        view.font = UIFont.boldSystemFont(ofSize: 27)
         return view
     }()
     
+    let product1Label: UILabel = {
+        return createProductLabelWithText("Produto 1")
+    }()
+    
     let product1AmountInput: CompleteInputView = {
-        let view = CompleteInputView(labelText: "Peso produto 1: ", placeHolder: "Peso em gramas")
+        let view = CompleteInputView(labelText: "Peso:", placeHolder: "Peso em gramas")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     let product1PriceInput: CompleteInputView = {
-        let view = CompleteInputView(labelText: "Preço produto 1: ", placeHolder: "Preço")
+        let view = CompleteInputView(labelText: "Preço:", placeHolder: "Preço")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
+    let product2Label: UILabel = {
+        return createProductLabelWithText("Produto 2")
+    }()
+    
     let product2AmountInput: CompleteInputView = {
-        let view = CompleteInputView(labelText: "Peso produto 2: ", placeHolder: "Peso em gramas")
+        let view = CompleteInputView(labelText: "Peso:", placeHolder: "Peso em gramas")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     let product2PriceInput: CompleteInputView = {
-        let view = CompleteInputView(labelText: "Preço produto 2: ", placeHolder: "Preço")
+        let view = CompleteInputView(labelText: "Preço:", placeHolder: "Preço")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -48,7 +56,7 @@ final class MainView: UIView {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.text = "Resultado"
-        view.font = UIFont.boldSystemFont(ofSize: 20)
+        view.font = UIFont.boldSystemFont(ofSize: 26)
         view.adjustsFontSizeToFitWidth = true
         return view
     }()
@@ -63,8 +71,19 @@ final class MainView: UIView {
         return view
     }()
     
+    let product1StackView: UIStackView = {
+        return createProductStackView()
+
+    }()
+    
+    let product2StackView: UIStackView = {
+        return createProductStackView()
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        backgroundColor = .brown
         
         setViewsDelegates()
         setupViewHierarchy()
@@ -87,24 +106,63 @@ final class MainView: UIView {
         addSubview(titleLabel)
         addSubview(mainStackView)
         
-        mainStackView.addArrangedSubview(product1AmountInput)
-        mainStackView.addArrangedSubview(product1PriceInput)
-        mainStackView.addArrangedSubview(product2AmountInput)
-        mainStackView.addArrangedSubview(product2PriceInput)
+        mainStackView.addArrangedSubview(product1StackView)
+        mainStackView.addArrangedSubview(product2StackView)
         mainStackView.addArrangedSubview(resultLabel)
+
+        product1StackView.addArrangedSubview(product1Label)
+        product1StackView.addArrangedSubview(product1AmountInput)
+        product1StackView.addArrangedSubview(product1PriceInput)
+        
+        product2StackView.addArrangedSubview(product2Label)
+        product2StackView.addArrangedSubview(product2AmountInput)
+        product2StackView.addArrangedSubview(product2PriceInput)
+        
     }
     
     private func setupConstraints() {
         translatesAutoresizingMaskIntoConstraints = false
         
         titleLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
         titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
-        mainStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor).isActive = true
-        mainStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -100).isActive = true
+        mainStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10).isActive = true
+        mainStackView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         mainStackView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         mainStackView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        
+        let mainStackViewWidth = mainStackView.widthAnchor
+        product1StackView.widthAnchor.constraint(equalTo: mainStackViewWidth).isActive = true
+        product2StackView.widthAnchor.constraint(equalTo: mainStackViewWidth).isActive = true
+        
+        let product1StackViewWidth = product1StackView.widthAnchor
+        product1AmountInput.widthAnchor.constraint(equalTo: product1StackViewWidth, constant: -20).isActive = true
+        product1PriceInput.widthAnchor.constraint(equalTo: product1StackViewWidth, constant: -20).isActive = true
+        
+        let product2StackViewWidth = product2StackView.widthAnchor
+        product2AmountInput.widthAnchor.constraint(equalTo: product2StackViewWidth, constant: -20).isActive = true
+        product2PriceInput.widthAnchor.constraint(equalTo: product2StackViewWidth, constant: -20).isActive = true
+
+    }
+    
+    private static func createProductStackView() -> UIStackView {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.backgroundColor = .gray
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.distribution = .equalSpacing
+        stackView.spacing = 10
+        return stackView
+    }
+    
+    private static func createProductLabelWithText(_ text: String) -> UILabel {
+        let label = UILabel()
+        label.text = text
+        label.font = UIFont.boldSystemFont(ofSize: 25)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }
 }
 
