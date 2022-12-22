@@ -31,6 +31,7 @@ final class CompleteInputView: UIStackView {
         let view = UITextField()
         view.placeholder = placeHolder
         view.backgroundColor = .white
+        view.textColor = .black
         view.layer.cornerRadius = 10
         view.keyboardType = .decimalPad
         view.addTarget(self, action: #selector(didStartEditing), for: .editingDidBegin)
