@@ -20,6 +20,8 @@
 		CD73E734290B135000FD650A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD73E733290B135000FD650A /* ViewController.swift */; };
 		CD73E739290B135300FD650A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD73E738290B135300FD650A /* Assets.xcassets */; };
 		CD73E73C290B135300FD650A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD73E73A290B135300FD650A /* LaunchScreen.storyboard */; };
+		CDA0E9892955F625005F9BA2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDA0E98B2955F625005F9BA2 /* Localizable.strings */; };
+		CDA0E98E29562269005F9BA2 /* Localizator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA0E98D29562269005F9BA2 /* Localizator.swift */; };
 		CDCDDB83292D41FB0026F468 /* NotificationCenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCDDB82292D41FB0026F468 /* NotificationCenterSpy.swift */; };
 		CDCDDB86292D42C10026F468 /* NotificationCenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCDDB85292D42C10026F468 /* NotificationCenterProtocol.swift */; };
 		CDCDDB8A292D6A360026F468 /* ProductComparatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCDDB89292D6A360026F468 /* ProductComparatorTests.swift */; };
@@ -52,6 +54,10 @@
 		CD73E73B290B135300FD650A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD73E73D290B135300FD650A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD73E742290B135400FD650A /* PriceComparatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PriceComparatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDA0E9832955F0F9005F9BA2 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		CDA0E98A2955F625005F9BA2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CDA0E98C2955F637005F9BA2 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		CDA0E98D29562269005F9BA2 /* Localizator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizator.swift; sourceTree = "<group>"; };
 		CDCDDB82292D41FB0026F468 /* NotificationCenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterSpy.swift; sourceTree = "<group>"; };
 		CDCDDB85292D42C10026F468 /* NotificationCenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterProtocol.swift; sourceTree = "<group>"; };
 		CDCDDB89292D6A360026F468 /* ProductComparatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductComparatorTests.swift; sourceTree = "<group>"; };
@@ -104,18 +110,20 @@
 		CD73E72E290B135000FD650A /* PriceComparator */ = {
 			isa = PBXGroup;
 			children = (
-				CDCDDB87292D4A8C0026F468 /* Enums */,
-				CDCDDB84292D42690026F468 /* Protocols */,
-				CDD3AF8C291B0653004CA52E /* Model */,
-				CDCDDB88292D4AAF0026F468 /* Views */,
-				CD52F10D292EC13A00350E80 /* ViewModel */,
 				CD73E72F290B135000FD650A /* AppDelegate.swift */,
+				CD73E738290B135300FD650A /* Assets.xcassets */,
+				CDCDDB87292D4A8C0026F468 /* Enums */,
+				CDA0E98F295622E9005F9BA2 /* Helpers */,
+				CD73E73D290B135300FD650A /* Info.plist */,
+				CD73E73A290B135300FD650A /* LaunchScreen.storyboard */,
+				CDA0E98B2955F625005F9BA2 /* Localizable.strings */,
+				CDD3AF8C291B0653004CA52E /* Model */,
+				CD5E15D929145804002BE768 /* ProductComparator.swift */,
+				CDCDDB84292D42690026F468 /* Protocols */,
 				CD73E731290B135000FD650A /* SceneDelegate.swift */,
 				CD73E733290B135000FD650A /* ViewController.swift */,
-				CD5E15D929145804002BE768 /* ProductComparator.swift */,
-				CD73E738290B135300FD650A /* Assets.xcassets */,
-				CD73E73A290B135300FD650A /* LaunchScreen.storyboard */,
-				CD73E73D290B135300FD650A /* Info.plist */,
+				CD52F10D292EC13A00350E80 /* ViewModel */,
+				CDCDDB88292D4AAF0026F468 /* Views */,
 			);
 			path = PriceComparator;
 			sourceTree = "<group>";
@@ -129,6 +137,14 @@
 				CD6DDFB3291D9A4E008FC4E0 /* ViewControllerTests.swift */,
 			);
 			path = PriceComparatorTests;
+			sourceTree = "<group>";
+		};
+		CDA0E98F295622E9005F9BA2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CDA0E98D29562269005F9BA2 /* Localizator.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		CDCDDB84292D42690026F468 /* Protocols */ = {
@@ -228,6 +244,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = CD73E723290B135000FD650A;
 			productRefGroup = CD73E72D290B135000FD650A /* Products */;
@@ -246,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD73E73C290B135300FD650A /* LaunchScreen.storyboard in Resources */,
+				CDA0E9892955F625005F9BA2 /* Localizable.strings in Resources */,
 				CD73E739290B135300FD650A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +289,7 @@
 				CD52F10F292EC1C600350E80 /* ProductViewModel.swift in Sources */,
 				CD73E730290B135000FD650A /* AppDelegate.swift in Sources */,
 				CD73E732290B135000FD650A /* SceneDelegate.swift in Sources */,
+				CDA0E98E29562269005F9BA2 /* Localizator.swift in Sources */,
 				CD5E15D6291432DC002BE768 /* CompleteInputView.swift in Sources */,
 				CDCDDB86292D42C10026F468 /* NotificationCenterProtocol.swift in Sources */,
 				CD5E15DC29145A7F002BE768 /* ChepeastProduct.swift in Sources */,
@@ -303,8 +322,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				CD73E73B290B135300FD650A /* Base */,
+				CDA0E9832955F0F9005F9BA2 /* pt-BR */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CDA0E98B2955F625005F9BA2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CDA0E98A2955F625005F9BA2 /* en */,
+				CDA0E98C2955F637005F9BA2 /* pt-BR */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -314,6 +343,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -375,6 +405,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
