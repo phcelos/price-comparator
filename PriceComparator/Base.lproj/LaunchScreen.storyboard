@@ -14,8 +14,22 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price Comparator" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wW-Ep-ICu">
+                                <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7wW-Ep-ICu" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="i0A-oc-ZFt"/>
+                            <constraint firstItem="7wW-Ep-ICu" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="mXx-Z7-ef1"/>
+                            <constraint firstItem="7wW-Ep-ICu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="twx-Dz-j5N"/>
+                            <constraint firstItem="7wW-Ep-ICu" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="xso-ar-rpR"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
