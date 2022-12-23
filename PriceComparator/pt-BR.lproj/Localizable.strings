@@ -6,3 +6,14 @@
 */
 
 "title.label" = "Comparador de Preços";
+"product1.label" = "Produto 1";
+"product2.label" = "Produto 2";
+"weight.label" = "Peso:";
+"weightInGrams.placeholder" = "Peso em gramas";
+"price.label" = "Preço:";
+"price.placeholder" = "Preço";
+"result.label" = "Resultado";
+
+"product1.ChepeastProduct" = "Produto 1 é o mais barato";
+"product2.ChepeastProduct" = "Produto 2 é o mais barato";
+"equal.ChepeastProduct" = "Os produtos têm o mesmo custo";
