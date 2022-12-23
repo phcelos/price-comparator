@@ -14,40 +14,40 @@ final class MainView: UIView {
     let titleLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.text = "Comparador de Preços"
+        view.text = "title.label".localized()
         view.textColor = .black
         view.font = UIFont.boldSystemFont(ofSize: 27)
         return view
     }()
     
     let product1Label: UILabel = {
-        return createProductLabelWithText("Produto 1")
+        return createProductLabelWithText("product1.label".localized())
     }()
     
     let product1AmountInput: CompleteInputView = {
-        let view = CompleteInputView(labelText: "Peso:", placeHolder: "Peso em gramas")
+        let view = CompleteInputView(labelText: "weight.label".localized(), placeHolder: "weightInGrams.placeholder".localized())
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     let product1PriceInput: CompleteInputView = {
-        let view = CompleteInputView(labelText: "Preço:", placeHolder: "Preço")
+        let view = CompleteInputView(labelText: "price.label".localized(), placeHolder: "price.placeholder".localized())
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     let product2Label: UILabel = {
-        return createProductLabelWithText("Produto 2")
+        return createProductLabelWithText("product2.label".localized())
     }()
     
     let product2AmountInput: CompleteInputView = {
-        let view = CompleteInputView(labelText: "Peso:", placeHolder: "Peso em gramas")
+        let view = CompleteInputView(labelText: "weight.label".localized(), placeHolder: "weightInGrams.placeholder".localized())
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     let product2PriceInput: CompleteInputView = {
-        let view = CompleteInputView(labelText: "Preço:", placeHolder: "Preço")
+        let view = CompleteInputView(labelText: "price.label".localized(), placeHolder: "price.placeholder".localized())
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -55,7 +55,7 @@ final class MainView: UIView {
     let resultLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.text = "Resultado"
+        view.text = "result.label".localized()
         view.font = UIFont.boldSystemFont(ofSize: 26)
         view.adjustsFontSizeToFitWidth = true
         return view
@@ -117,7 +117,6 @@ final class MainView: UIView {
         product2StackView.addArrangedSubview(product2Label)
         product2StackView.addArrangedSubview(product2AmountInput)
         product2StackView.addArrangedSubview(product2PriceInput)
-        
     }
     
     private func setupConstraints() {
