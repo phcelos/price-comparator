@@ -1,5 +1,5 @@
 //
-//  Localizator.swift
+//  StringExtensions.swift
 //  PriceComparator
 //
 //  Created by Paulo Henrique on 23/12/22.
@@ -7,8 +7,9 @@
 
 import Foundation
 
-class Localizator {
-    static func getLocalizedStringForKey(_ key: String) -> String {
+extension String {
+    func localized() -> String {
+        let key = self
         let value = NSLocalizedString(key, comment: "")
         if value != key || NSLocale.preferredLanguages.first == "en" {
             return value
