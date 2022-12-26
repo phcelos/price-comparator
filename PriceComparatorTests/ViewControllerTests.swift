@@ -66,7 +66,7 @@ class ViewControllerTests: XCTestCase {
     func test_completeInputDidFinishEditingWithText_updatesResultLabel() {
         let sut = makeSUT()
         let mainView = sut.mainView
-        let defaultResultLabelText = "result.label".localized()
+        let defaultResultLabelText = "-"
         
         sut.completeInput(mainView.product1AmountInput, didFinishEditingWithText: "100")
         XCTAssertEqual(mainView.resultLabel.text, defaultResultLabelText, "product1AmountInput")

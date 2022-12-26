@@ -57,7 +57,7 @@ final class ViewController: UIViewController {
     }
     
     private func updateResultLabel(chepeastProduct: ChepeastProduct?) {
-        mainView.resultLabel.text = (chepeastProduct?.rawValue ?? "result.label").localized()
+        mainView.resultLabel.text = chepeastProduct?.rawValue.localized() ?? "-"
     }
     
     @objc private func keyboardWillShow(notification: NSNotification) {

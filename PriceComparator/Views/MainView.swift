@@ -55,7 +55,7 @@ final class MainView: UIView {
     let resultLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.text = "result.label".localized()
+        view.text = "-"
         view.font = UIFont.boldSystemFont(ofSize: 26)
         view.adjustsFontSizeToFitWidth = true
         return view
