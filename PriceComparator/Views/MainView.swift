@@ -64,7 +64,6 @@ final class MainView: UIView {
     let mainStackView: UIStackView = {
         let view = UIStackView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .blue
         view.axis = .vertical
         view.alignment = .center
         view.distribution = .equalSpacing
@@ -82,8 +81,6 @@ final class MainView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        backgroundColor = .brown
         
         setViewsDelegates()
         setupViewHierarchy()
@@ -148,7 +145,6 @@ final class MainView: UIView {
     private static func createProductStackView() -> UIStackView {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.backgroundColor = .gray
         stackView.axis = .vertical
         stackView.alignment = .center
         stackView.distribution = .equalSpacing

@@ -22,15 +22,12 @@ final class CompleteInputView: UIStackView {
         let view = UILabel()
         view.text = labelText
         view.adjustsFontSizeToFitWidth = true
-        view.backgroundColor = .red
-        
         return view
     }()
         
     private lazy var textField: UITextField = {
         let view = UITextField()
         view.placeholder = placeHolder
-        view.backgroundColor = .white
         view.textColor = .black
         view.layer.cornerRadius = 10
         view.keyboardType = .decimalPad
@@ -72,7 +69,6 @@ final class CompleteInputView: UIStackView {
     
     private func setupView() {
         spacing = 5
-        backgroundColor = .green
         distribution = .fillEqually
     }
     

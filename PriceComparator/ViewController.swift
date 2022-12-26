@@ -40,7 +40,7 @@ final class ViewController: UIViewController {
     }
     
     private func setupView() {
-        view.backgroundColor = .purple
+        view.backgroundColor = .white
         view.addSubview(mainView)
     }
     
