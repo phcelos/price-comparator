@@ -120,10 +120,8 @@
 				CDCDDB87292D4A8C0026F468 /* Enums */,
 				CDA0E99229562C9F005F9BA2 /* Extensions */,
 				CD97A724295A74EE0052225D /* Helpers */,
-				CDD3AF8C291B0653004CA52E /* Model */,
+				CD97A726295A77470052225D /* MVVM */,
 				CDCDDB84292D42690026F468 /* Protocols */,
-				CD52F10D292EC13A00350E80 /* ViewModel */,
-				CDCDDB88292D4AAF0026F468 /* Views */,
 			);
 			path = PriceComparator;
 			sourceTree = "<group>";
@@ -162,6 +160,16 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		CD97A726295A77470052225D /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				CDD3AF8C291B0653004CA52E /* Model */,
+				CDCDDB88292D4AAF0026F468 /* View */,
+				CD52F10D292EC13A00350E80 /* ViewModel */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
 		CDA0E99229562C9F005F9BA2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,14 +194,14 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
-		CDCDDB88292D4AAF0026F468 /* Views */ = {
+		CDCDDB88292D4AAF0026F468 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				CD5E15D5291432DC002BE768 /* CompleteInputView.swift */,
 				CD52F10B292EAD0600350E80 /* MainView.swift */,
 				CD73E733290B135000FD650A /* ViewController.swift */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
 		CDD3AF8C291B0653004CA52E /* Model */ = {
