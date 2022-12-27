@@ -9,7 +9,7 @@ import XCTest
 
 @testable import PriceComparator
 
-class ProductTests: XCTestCase {
+final class ProductTests: XCTestCase {
     func test_priceOfGram_whenProductAmountIsZero_shouldReturnNil() {
         let sut = Product(price: 10, amount: 0)
         XCTAssertNil(sut.priceOfGram())

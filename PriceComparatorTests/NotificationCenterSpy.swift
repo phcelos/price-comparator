@@ -9,7 +9,7 @@
 
 import Foundation
 
-class NotificationCenterSpy: NotificationCenterProtocol {
+final class NotificationCenterSpy: NotificationCenterProtocol {
     
     var addObserverCount = 0
     var addObserverObserversPassed = [Any?]()

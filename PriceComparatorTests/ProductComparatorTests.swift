@@ -9,7 +9,7 @@ import XCTest
 
 @testable import PriceComparator
 
-class ProductComparatorTests: XCTestCase {
+final class ProductComparatorTests: XCTestCase {
     func test_calculateTheCheapestProduct_givenProduct1IsTheCheapest_shouldReturnProduct1() {
         let priceOfGram1 = Product(price: 10, amount: 100).priceOfGram()!
         let priceOfGram2 = Product(price: 40, amount: 300).priceOfGram()!
