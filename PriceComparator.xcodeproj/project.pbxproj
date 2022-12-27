@@ -23,6 +23,7 @@
 		CD97A71F295A2BC50052225D /* ResultLabelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD97A71E295A2BC50052225D /* ResultLabelViewModel.swift */; };
 		CD97A721295A37D20052225D /* ResultLabelViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD97A720295A37D20052225D /* ResultLabelViewModelTests.swift */; };
 		CD97A723295A38980052225D /* ProductTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD97A722295A38980052225D /* ProductTests.swift */; };
+		CD97A72A295A82580052225D /* KeyboardOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD97A729295A82580052225D /* KeyboardOwner.swift */; };
 		CDA0E9892955F625005F9BA2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDA0E98B2955F625005F9BA2 /* Localizable.strings */; };
 		CDA0E99129562C3C005F9BA2 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA0E99029562C3C005F9BA2 /* StringExtensions.swift */; };
 		CDCDDB83292D41FB0026F468 /* NotificationCenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCDDB82292D41FB0026F468 /* NotificationCenterSpy.swift */; };
@@ -60,6 +61,7 @@
 		CD97A71E295A2BC50052225D /* ResultLabelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultLabelViewModel.swift; sourceTree = "<group>"; };
 		CD97A720295A37D20052225D /* ResultLabelViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultLabelViewModelTests.swift; sourceTree = "<group>"; };
 		CD97A722295A38980052225D /* ProductTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTests.swift; sourceTree = "<group>"; };
+		CD97A729295A82580052225D /* KeyboardOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardOwner.swift; sourceTree = "<group>"; };
 		CDA0E98A2955F625005F9BA2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CDA0E98C2955F637005F9BA2 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		CDA0E99029562C3C005F9BA2 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				CDCDDB85292D42C10026F468 /* NotificationCenterProtocol.swift */,
+				CD97A729295A82580052225D /* KeyboardOwner.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				CD97A71F295A2BC50052225D /* ResultLabelViewModel.swift in Sources */,
 				CD5E15D6291432DC002BE768 /* CompleteInputView.swift in Sources */,
 				CDCDDB86292D42C10026F468 /* NotificationCenterProtocol.swift in Sources */,
+				CD97A72A295A82580052225D /* KeyboardOwner.swift in Sources */,
 				CD5E15DC29145A7F002BE768 /* ChepeastProduct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -25,7 +25,7 @@ final class CompleteInputView: UIStackView {
         return view
     }()
         
-    private lazy var textField: UITextField = {
+    lazy var textField: UITextField = {
         let view = UITextField()
         view.placeholder = placeHolder
         view.textColor = .black

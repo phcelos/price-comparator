@@ -7,9 +7,7 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
-    
-    private let spacingBetweenKeyboardAndTextField: CGFloat = 10
+final class ViewController: UIViewController, KeyboardOwner {
     
     private let notificationCenter: NotificationCenterProtocol
     private var product1ViewModel = ProductViewModel(product: Product())
@@ -18,7 +16,7 @@ final class ViewController: UIViewController {
     
     let mainView = MainView(frame: .zero)
     
-    var activeCompleteInput: CompleteInputView?
+    var activeTextField: UITextField?
     
     init(notificationCenter: NotificationCenterProtocol = NotificationCenter.default) {
         self.notificationCenter = notificationCenter
@@ -60,36 +58,15 @@ final class ViewController: UIViewController {
     }
 
     private func setupKeyboardEvents() {
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        activateHideKeyboardWhenTappedAroundBehavior()
+        activateMoveViewUpWhenTextFieldIsCoveredByKeyboardBehavior(notificationCenter: notificationCenter)
     }
-    
-    @objc private func keyboardWillShow(notification: NSNotification) {
-        guard
-            let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
-            let activeCompleteInput = activeCompleteInput
-        else {
-            return
-        }
-        
-        let bottomOfTextField = activeCompleteInput.convert(activeCompleteInput.bounds, to: view).maxY
-        
-        let topOfKeyboard = view.frame.height - keyboardSize.height
-        
-        // if the bottom of Textfield is below the top of keyboard, move up
-        if bottomOfTextField > topOfKeyboard {
-            view.frame.origin.y = topOfKeyboard - bottomOfTextField - spacingBetweenKeyboardAndTextField
-        }
-    }
-    
-    @objc private func keyboardWillHide(notification: NSNotification) {
-        view.frame.origin.y = 0
-    }
+
 }
 
 extension ViewController: CompleteInputDelegate {
     func completeInputDidStartEditing(_ completeInput: CompleteInputView) {
-        activeCompleteInput = completeInput
+        activeTextField = completeInput.textField
     }
     
     func completeInput(_ completeInput: CompleteInputView, didFinishEditingWithText text: String) {
@@ -114,3 +91,4 @@ extension ViewController: CompleteInputDelegate {
         )
     }
 }
+
