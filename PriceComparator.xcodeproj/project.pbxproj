@@ -119,17 +119,17 @@
 				CD73E72F290B135000FD650A /* AppDelegate.swift */,
 				CD73E738290B135300FD650A /* Assets.xcassets */,
 				CDCDDB87292D4A8C0026F468 /* Enums */,
+				CDA0E99229562C9F005F9BA2 /* Extensions */,
+				CD97A724295A74EE0052225D /* Helpers */,
 				CD73E73D290B135300FD650A /* Info.plist */,
 				CD73E73A290B135300FD650A /* LaunchScreen.storyboard */,
 				CDA0E98B2955F625005F9BA2 /* Localizable.strings */,
 				CDD3AF8C291B0653004CA52E /* Model */,
-				CD5E15D929145804002BE768 /* ProductComparator.swift */,
 				CDCDDB84292D42690026F468 /* Protocols */,
 				CD73E731290B135000FD650A /* SceneDelegate.swift */,
 				CD73E733290B135000FD650A /* ViewController.swift */,
 				CD52F10D292EC13A00350E80 /* ViewModel */,
 				CDCDDB88292D4AAF0026F468 /* Views */,
-				CDA0E99229562C9F005F9BA2 /* Extensions */,
 			);
 			path = PriceComparator;
 			sourceTree = "<group>";
@@ -145,6 +145,14 @@
 				CD6DDFB3291D9A4E008FC4E0 /* ViewControllerTests.swift */,
 			);
 			path = PriceComparatorTests;
+			sourceTree = "<group>";
+		};
+		CD97A724295A74EE0052225D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CD5E15D929145804002BE768 /* ProductComparator.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		CDA0E99229562C9F005F9BA2 /* Extensions */ = {
