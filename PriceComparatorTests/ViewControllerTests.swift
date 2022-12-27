@@ -9,7 +9,7 @@ import XCTest
 
 @testable import PriceComparator
 
-class ViewControllerTests: XCTestCase {
+final class ViewControllerTests: XCTestCase {
     private lazy var notificationCenterSpy = NotificationCenterSpy()
     
     func makeSUT() -> ViewController {

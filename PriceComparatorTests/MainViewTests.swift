@@ -9,7 +9,7 @@ import XCTest
 
 @testable import PriceComparator
 
-class MainViewTests: XCTestCase {
+final class MainViewTests: XCTestCase {
     func makeSUT() -> MainView {
         MainView()
     }
