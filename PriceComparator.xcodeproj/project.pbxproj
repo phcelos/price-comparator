@@ -120,7 +120,6 @@
 				CDCDDB87292D4A8C0026F468 /* Enums */,
 				CDA0E99229562C9F005F9BA2 /* Extensions */,
 				CD97A724295A74EE0052225D /* Helpers */,
-				CD73E73D290B135300FD650A /* Info.plist */,
 				CDD3AF8C291B0653004CA52E /* Model */,
 				CDCDDB84292D42690026F468 /* Protocols */,
 				CD52F10D292EC13A00350E80 /* ViewModel */,
@@ -158,6 +157,7 @@
 				CD73E73A290B135300FD650A /* LaunchScreen.storyboard */,
 				CDA0E98B2955F625005F9BA2 /* Localizable.strings */,
 				CD73E738290B135300FD650A /* Assets.xcassets */,
+				CD73E73D290B135300FD650A /* Info.plist */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -491,7 +491,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PriceComparator/Info.plist;
+				INFOPLIST_FILE = PriceComparator/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -517,7 +517,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PriceComparator/Info.plist;
+				INFOPLIST_FILE = PriceComparator/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
