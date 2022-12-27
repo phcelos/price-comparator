@@ -14,6 +14,7 @@ final class ViewController: UIViewController {
     private let notificationCenter: NotificationCenterProtocol
     private var product1ViewModel = ProductViewModel(product: Product())
     private var product2ViewModel = ProductViewModel(product: Product())
+    private var resultLabelViewModel = ResultLabelViewModel()
     
     let mainView = MainView(frame: .zero)
     
@@ -36,6 +37,7 @@ final class ViewController: UIViewController {
         
         setupView()
         setupConstraints()
+        setupResultLabelViewModel()
         setupKeyboardEvents()
     }
     
@@ -50,14 +52,16 @@ final class ViewController: UIViewController {
         mainView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
         mainView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
     }
+    
+    private func setupResultLabelViewModel() {
+        resultLabelViewModel.updateResultLabel = { [weak self] resultText in
+            self?.mainView.resultLabel.text = resultText
+        }
+    }
 
     private func setupKeyboardEvents() {
         notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    private func updateResultLabel(chepeastProduct: ChepeastProduct?) {
-        mainView.resultLabel.text = chepeastProduct?.rawValue.localized() ?? "-"
     }
     
     @objc private func keyboardWillShow(notification: NSNotification) {
@@ -104,9 +108,9 @@ extension ViewController: CompleteInputDelegate {
             return
         }
         
-        let chepeastProduct = ProductComparator.calculateTheChepeastProduct(
-            product1: product1ViewModel.product, product2: product2ViewModel.product)
-        
-        updateResultLabel(chepeastProduct: chepeastProduct)
+        resultLabelViewModel.compareProducts(
+            product1ViewModel: product1ViewModel,
+            product2ViewModel: product2ViewModel
+        )
     }
 }

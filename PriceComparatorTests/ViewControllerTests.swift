@@ -65,6 +65,8 @@ class ViewControllerTests: XCTestCase {
     
     func test_completeInputDidFinishEditingWithText_updatesResultLabel() {
         let sut = makeSUT()
+        sut.loadViewIfNeeded()
+
         let mainView = sut.mainView
         let defaultResultLabelText = "-"
         
