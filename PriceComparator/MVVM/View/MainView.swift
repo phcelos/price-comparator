@@ -56,7 +56,7 @@ final class MainView: UIView {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.text = "-"
-        view.font = UIFont.boldSystemFont(ofSize: 26)
+        view.font = UIFont.boldSystemFont(ofSize: 23)
         view.adjustsFontSizeToFitWidth = true
         return view
     }()
