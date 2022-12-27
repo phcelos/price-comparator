@@ -125,8 +125,8 @@ final class MainView: UIView {
         
         mainStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10).isActive = true
         mainStackView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        mainStackView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        mainStackView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        mainStackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
+        mainStackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
         
         let mainStackViewWidth = mainStackView.widthAnchor
         product1StackView.widthAnchor.constraint(equalTo: mainStackViewWidth).isActive = true
