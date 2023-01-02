@@ -8,8 +8,12 @@
 import Foundation
 
 struct ProductViewModel {
-    var product: Product
-    
+    private var product: Product
+
+    init(product: Product) {
+        self.product = product
+    }
+        
     var amount: Float? {
         get {
             product.amount
@@ -27,6 +31,12 @@ struct ProductViewModel {
         
         set {
             product.price = newValue
+        }
+    }
+    
+    var priceOfGram: Float? {
+        get {
+            product.priceOfGram()
         }
     }
 }

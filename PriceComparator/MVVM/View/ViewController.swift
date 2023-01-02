@@ -7,17 +7,16 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
-    
-    private let spacingBetweenKeyboardAndTextField: CGFloat = 10
+final class ViewController: UIViewController, KeyboardOwner {
     
     private let notificationCenter: NotificationCenterProtocol
     private var product1ViewModel = ProductViewModel(product: Product())
     private var product2ViewModel = ProductViewModel(product: Product())
+    private var resultLabelViewModel = ResultLabelViewModel()
     
     let mainView = MainView(frame: .zero)
     
-    var activeCompleteInput: CompleteInputView?
+    var activeTextField: UITextField?
     
     init(notificationCenter: NotificationCenterProtocol = NotificationCenter.default) {
         self.notificationCenter = notificationCenter
@@ -36,6 +35,7 @@ final class ViewController: UIViewController {
         
         setupView()
         setupConstraints()
+        setupResultLabelViewModel()
         setupKeyboardEvents()
     }
     
@@ -50,42 +50,23 @@ final class ViewController: UIViewController {
         mainView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
         mainView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
     }
+    
+    private func setupResultLabelViewModel() {
+        resultLabelViewModel.updateResultLabel = { [weak self] resultText in
+            self?.mainView.resultLabel.text = resultText
+        }
+    }
 
     private func setupKeyboardEvents() {
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        activateHideKeyboardWhenTappedAroundBehavior()
+        activateMoveViewUpWhenTextFieldIsCoveredByKeyboardBehavior(notificationCenter: notificationCenter)
     }
-    
-    private func updateResultLabel(chepeastProduct: ChepeastProduct?) {
-        mainView.resultLabel.text = chepeastProduct?.rawValue ?? "Resultado"
-    }
-    
-    @objc private func keyboardWillShow(notification: NSNotification) {
-        guard
-            let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
-            let activeCompleteInput = activeCompleteInput
-        else {
-            return
-        }
-        
-        let bottomOfTextField = activeCompleteInput.convert(activeCompleteInput.bounds, to: view).maxY
-        
-        let topOfKeyboard = view.frame.height - keyboardSize.height
-        
-        // if the bottom of Textfield is below the top of keyboard, move up
-        if bottomOfTextField > topOfKeyboard {
-            view.frame.origin.y = topOfKeyboard - bottomOfTextField - spacingBetweenKeyboardAndTextField
-        }
-    }
-    
-    @objc private func keyboardWillHide(notification: NSNotification) {
-        view.frame.origin.y = 0
-    }
+
 }
 
 extension ViewController: CompleteInputDelegate {
     func completeInputDidStartEditing(_ completeInput: CompleteInputView) {
-        activeCompleteInput = completeInput
+        activeTextField = completeInput.textField
     }
     
     func completeInput(_ completeInput: CompleteInputView, didFinishEditingWithText text: String) {
@@ -104,9 +85,10 @@ extension ViewController: CompleteInputDelegate {
             return
         }
         
-        let chepeastProduct = ProductComparator.calculateTheChepeastProduct(
-            product1: product1ViewModel.product, product2: product2ViewModel.product)
-        
-        updateResultLabel(chepeastProduct: chepeastProduct)
+        resultLabelViewModel.compareProducts(
+            product1ViewModel: product1ViewModel,
+            product2ViewModel: product2ViewModel
+        )
     }
 }
+
