@@ -28,7 +28,6 @@ final class CompleteInputView: UIStackView {
     lazy var textField: UITextField = {
         let view = UITextField()
         view.placeholder = placeHolder
-        view.textColor = .black
         view.borderStyle = .roundedRect
         view.keyboardType = .decimalPad
         view.addTarget(self, action: #selector(didStartEditing), for: .editingDidBegin)

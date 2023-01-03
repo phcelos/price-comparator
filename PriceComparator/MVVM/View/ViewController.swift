@@ -40,7 +40,7 @@ final class ViewController: UIViewController, KeyboardOwner {
     }
     
     private func setupView() {
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         view.addSubview(mainView)
     }
     

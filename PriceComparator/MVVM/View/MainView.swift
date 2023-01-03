@@ -15,7 +15,6 @@ final class MainView: UIView {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.text = "title.label".localized()
-        view.textColor = .black
         view.font = UIFont.boldSystemFont(ofSize: 27)
         return view
     }()
