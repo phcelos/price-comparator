@@ -9,12 +9,12 @@
 "product1.label" = "Product 1";
 "product2.label" = "Product 2";
 "weight.label" = "Weight:";
-"weightInGrams.placeholder" = "Weight in grams";
+"weightInGrams.placeholder" = "Weight (grams)";
 "price.label" = "Price:";
 "price.placeholder" = "Price";
 "result.label" = "Result";
 
-"product1.ChepeastProduct" = "Product 1 is the chepeast";
-"product2.ChepeastProduct" = "Product 2 is the chepeast";
+"product1.ChepeastProduct" = "Product 1 is cheaper";
+"product2.ChepeastProduct" = "Product 2 is cheaper";
 "equal.ChepeastProduct" = "The products have the same cost";
 

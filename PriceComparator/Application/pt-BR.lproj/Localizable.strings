@@ -9,7 +9,7 @@
 "product1.label" = "Produto 1";
 "product2.label" = "Produto 2";
 "weight.label" = "Peso:";
-"weightInGrams.placeholder" = "Peso em gramas";
+"weightInGrams.placeholder" = "Peso (gramas)";
 "price.label" = "Preço:";
 "price.placeholder" = "Preço";
 "result.label" = "Resultado";
