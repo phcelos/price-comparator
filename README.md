@@ -12,10 +12,10 @@ The main objective of this project was to practice:
 - Dark mode support;
 - CI.
 
-## Screen Shots
+## Screenshots
+<img src="docs/screenshot-light-mode-en.png" alt="Screenshot light mode in English" width="250">
+<img src="docs/screenshot-dark-mode-en.png" alt="Screenshot dark mode in English" width="250">
+<img src="docs/screenshot-dark-mode-en-result.png" alt="Screenshot of result in English" width="250">
 
-![Screen shot light mode in English](docs/screen-shot-light-mode-en.png)\
-![Screen shot dark mode in English](docs/screen-shot-dark-mode-en.png)\
-![Screen shot of result in English](docs/screen-shot-dark-mode-en-result.png)\
 ### Texts localized to Portuguese (Brazil)
-![Screen shot light mode in Portuguese (Brazil)](docs/screen-shot-dark-mode-pt-br.png)
+<img src="docs/screenshot-dark-mode-pt-br.png" alt="Screenshot light mode in Portuguese (Brazil)" width="250">
